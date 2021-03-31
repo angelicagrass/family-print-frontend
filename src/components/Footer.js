@@ -10,8 +10,7 @@ const Footer = () => {
                         Copyright &copy; Project
                     </Col>
                 </Row>
-            </Container>
-            
+            </Container>  
         </footer>
     )
 }
