@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './bootstrap.min.css'
-import './index.css';
+import { ThemeProvider } from 'styled-components'
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GlobalStyle from './theme/globalstyles.js'
+import Theme from './theme/theme.js'
 
 ReactDOM.render(
   <React.StrictMode>
+    <ThemeProvider theme={Theme}>
+    <GlobalStyle />
     <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
