@@ -13,7 +13,7 @@ padding: 17px;
 const Categories = () => {
     return (
         <CatBar>
-          <Links />
+          {/* <Links /> */}
         </CatBar>
     )
 }
