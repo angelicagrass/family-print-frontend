@@ -2,9 +2,9 @@ const products = [
   {
     _id: '1',
     name: 'Poster 1',
-    image: '/img/produkt1.jpg',
+    image: '/img/image1-2.jpg',
     description:
-      'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
+    'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
     brand: 'Apple',
     category: 'Electronics',
     price: 79,
@@ -15,9 +15,9 @@ const products = [
   {
     _id: '2',
     name: 'Familjeposter 2',
-    image: '/img/produkt2.jpg',
+    image: '/img/image2-2.jpg',
     description:
-      'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
+      'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
     brand: 'Apple',
     category: 'Electronics',
     price: 99,
@@ -28,9 +28,9 @@ const products = [
   {
     _id: '3',
     name: 'Poster3',
-    image: '/img/produkt3.jpg',
+    image: '/img/image3-2.jpg',
     description:
-      'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
+    'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
     brand: 'Cannon',
     category: 'Electronics',
     price: 59,
