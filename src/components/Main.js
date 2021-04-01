@@ -13,7 +13,10 @@ margin-top: 10px;
 margin-left: auto;
 margin-right: auto;
 text-align: center;
-padding-top: 50px;
+padding-top: 5vh;
+padding-right: 1vh;
+padding-left: 1vh;
+padding-bottom: 3vh;
 `
 
 const MainBox = ({ children }) => {
