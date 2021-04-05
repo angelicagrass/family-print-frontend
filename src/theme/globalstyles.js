@@ -14,7 +14,7 @@ body {
 }
 
 .darkcolor {
-  color: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.main};
 }
 
 footer {
@@ -22,5 +22,16 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+.nav-item {
+  margin-right: 0px;
+  padding: 0px;
+  min-width: 100px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
 `
 export default GlobalStyle
