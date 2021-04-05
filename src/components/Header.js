@@ -1,22 +1,43 @@
 import React from 'react'
-import { Navbar, Nav, Container } from 'react-bootstrap'
+
+import { Link } from 'react-router-dom'
+
+import styled from 'styled-components'
+
+const StyledHeader = styled.div`
+
+background-color: white;
+width: 100%auto;
+border-bottom: 5px solid ${props => props.theme.colors.main};
+`
+
+const StyledImg = styled.div`
+background-image: url('/img/testlogga3.jpg');
+height: 250px;
+background-repeat: no-repeat;
+background-position: center;
+
+`
+
+const StyledBag = styled.div`
+float:right;
+margin: 3vh;
+color: ${props => props.theme.colors.main};
+
+
+
+`
 
 const Header = () => {
     return (
-        <header>
-            <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
-                <Container>
-                    <Navbar.Brand href="#home">Projekt</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                         <Nav className="ml-auto">
-                         <Nav.Link href="/cart"><i className='fas fa-shopping-cart'></i>Cart</Nav.Link>
-                         <Nav.Link href="/login"><i className='fas fa-user'></i>Sign In</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </header>
+        <StyledHeader>
+            <StyledBag>
+                <i class="fas fa-shopping-bag fa-3x"></i>
+            </StyledBag>
+            <Link to='/'>
+                <StyledImg />
+            </Link>
+        </StyledHeader>
     )
 }
 
