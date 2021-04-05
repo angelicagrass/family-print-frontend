@@ -10,6 +10,7 @@ import TermsScreen from './screens/TermsScreen.js'
 import CategoryScreen from './screens/CategoryScreen.js'
 
 
+
 const App = () => {
   return (
     
