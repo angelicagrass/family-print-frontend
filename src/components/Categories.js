@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Links from './Links.js'
-
 
 const CatBar = styled.div`
 background-color: white;
@@ -13,7 +11,6 @@ padding: 17px;
 const Categories = () => {
     return (
         <CatBar>
-          {/* <Links /> */}
         </CatBar>
     )
 }
