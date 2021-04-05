@@ -1,21 +1,17 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup } from 'react-bootstrap'
 import products from '../products.js'
 import Button from '../components/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
-import icons from 'react-bootstrap-icons'
+
 
 const MyDiv = styled.div`
 float: left;
 margin-top: -4vh;
 
-
-
 `
-
-
 
 const ProductScreen = ({ match }) => {
   const { id } = useParams()
@@ -23,7 +19,6 @@ const ProductScreen = ({ match }) => {
   const product = products.find((p) => p._id === id)
 
   return (
-
   <MainBox>
     <MyDiv>
     <Link to='/'>
@@ -54,12 +49,8 @@ const ProductScreen = ({ match }) => {
       <p><i class="fas fa-check-circle fa-lg"></i> Betala säkert med Klarna Checkout!</p>
       <p><i class="fas fa-check-circle fa-lg"></i> Frågor? Maila oss på info@familyprint.se</p>
       <p><i class="fas fa-check-circle fa-lg"></i> Leveranstid upp till 10 arbetsdagar.</p>
-
   </MainBox>
-
-
   )
-
 }
 
 export default ProductScreen
