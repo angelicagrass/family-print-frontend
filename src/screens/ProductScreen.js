@@ -13,7 +13,7 @@ margin-top: -4vh;
 
 `
 
-const ProductScreen = ({ match }) => {
+const ProductScreen = () => {
   const { id } = useParams()
 
   const product = products.find((p) => p._id === id)
