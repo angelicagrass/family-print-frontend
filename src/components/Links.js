@@ -23,7 +23,7 @@ const Links = () => {
       <Row>
       {categories.map(category => (
         <Col>
-          <NavDropdown title={category.name} id="basic-nav-dropdown">
+          <NavDropdown title={category.name} id="basic-nav-dropdown ">
             {category.sub.map((sub) => {
               return (
               <NavDropdown.Item>
