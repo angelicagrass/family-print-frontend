@@ -10,7 +10,7 @@ outline: none;
 border: none;
 color: white;
 border-radius: 2em;
-transition: all 0.2s;
+transition: all 0.4s;
 
 &:hover {
   background-color: ${props => props.theme.colors.lightmain};
