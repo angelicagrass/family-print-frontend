@@ -1,30 +1,37 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
 import styled from 'styled-components'
+
 
 const StyledBottom = styled.div`
 padding:0.3em 1.2em;
 font-size: 1rem;
-background-color: ${props => props.theme.colors.dark};
+background-color: ${props => props.theme.colors.main};
 outline: none;
 border: none;
 color: white;
-border-radius: 2em;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+border-radius: 2px;
+margin-top: 2vh;
+
+
 `
 
 const SocialDiv = styled.div`
   display: flex;
-  column-gap: 20px;
+  column-gap: 15px;
   /* justify-content: space-between; */
-
-
-
-
 
 `
 
+const KlarnaDiv = styled.div`
+background-image: url('/img/short-white.png');
+background-repeat: no-repeat;
+background-position: center;
+z-index: 100;
 
+height:120px;
+`
 
 const Footer = () => {
     return (
@@ -33,40 +40,24 @@ const Footer = () => {
         <MDBRow>
           <MDBCol md="6">
             <h5 className="title">Family Print</h5>
-            <p>
-              Here you can use rows and columns here to organize your footer
-              content.
-            </p>
+            <p><a href="/kopvillkor">Köpvillkor &amp; Info</a></p>
             <SocialDiv>
-                <i className="fab fa-facebook fa-3x darkcolor"></i>
-                <i class="fab fa-instagram-square fa-3x darkcolor"></i>
-                <i class="fas fa-envelope fa-3x darkcolor"></i>
+                <i className="fab fa-facebook fa-2x darkcolor"></i>
+                <i class="fab fa-instagram-square fa-2x darkcolor"></i>
+                <i class="fas fa-envelope fa-2x darkcolor"></i>
             </SocialDiv>
           </MDBCol>
           <MDBCol md="6">
-            <h5 className="title">Links</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!">Link 1</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 2</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 3</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      <StyledBottom>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: FamilyPrint.se 
+          <KlarnaDiv />
         </MDBContainer>
       </div>
+      </StyledBottom>
     </MDBFooter>
     )
 }
