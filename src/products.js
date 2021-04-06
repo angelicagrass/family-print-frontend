@@ -5,7 +5,7 @@ const products = [
     image: '/img/image1-2.jpg',
     description:
     'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
-    category: 'Personliga',
+    subcategory: 'poster-karta',
     price: 79,
   },
   {
@@ -14,7 +14,7 @@ const products = [
     image: '/img/image2-2.jpg',
     description:
       'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
-    category: 'Personliga',
+    subcategory: 'botaniskt',
     price: 99,
   },
   {
@@ -23,8 +23,7 @@ const products = [
     image: '/img/image3-2.jpg',
     description:
     'Den här personliga postern utformar du helt själv genom att fylla i vilka namn som ska tryckas samt vilken information som ska stå under respektive namn. Ni fyller i så många namn som ni vill ha på er poster, de rutorna som möjligtvis blir över lämnar ni helt enkelt tomma.',
-    brand: 'Cannon',
-    category: 'Electronics',
+    subcategory: 'poster-karta',
     price: 59,
   },
 ]
