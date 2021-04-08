@@ -12,6 +12,7 @@ import CategoryScreen from './screens/CategoryScreen.js'
 
 const App = () => {
   return (
+    
     <Router>
       <Header />
         <Navigation />
