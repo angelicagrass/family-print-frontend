@@ -14,6 +14,7 @@ const CategoryScreen = () => {
   
   return (
     <MainBox>
+      <h1 class="text-muted">{subcategory.replace('-', ' ')}</h1>
      <Row className="justify-content-md-center">
         {product.map(product => (
           <Col sm={12} md={6} lg={4} xl={3}>
