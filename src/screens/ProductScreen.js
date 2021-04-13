@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup } from 'react-bootstrap'
-import products from '../products.js'
+// import products from '../products.js'
 import Button from '../components/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
@@ -11,12 +11,21 @@ import SelectedList from '../components/SelectList.js'
 const MyDiv = styled.div`
 float: left;
 margin-top: -4vh;
-
 `
 
 const ProductScreen = () => {
   const { id } = useParams()
-  const product = products.find((p) => p._id === id)
+
+  const [product, setProduct] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let res = await fetch(`https://family-print-backend-staging.herokuapp.com/getproduct/${id}`)
+      res = await res.json()
+      setProduct(res)
+    }
+    fetchProducts()
+  },[id])
 
   return (
   <MainBox>
@@ -28,7 +37,7 @@ const ProductScreen = () => {
 
     <Row className='justify-content-center'>
       <Col md={5}>
-        <Image src={product.image} alt={product.name} fluid />
+        <Image src={product.imageurl} alt={product.name} fluid />
       </Col>
       <Col md={4}>
         <ListGroup variant='flush'>
@@ -40,13 +49,12 @@ const ProductScreen = () => {
             <SelectedList />
           </ListGroup.Item>
           <ListGroup.Item>
-            Beskrivning: {product.description}
+            Beskrivning: {product.caption}
           </ListGroup.Item>
             <ListGroup.Item><Button primary>KÖP</Button></ListGroup.Item>
         </ListGroup>
       </Col>
     </Row>
-
       <br></br>
       <p><i class="fas fa-check-circle fa-lg"></i> Betala säkert med Klarna Checkout!</p>
       <p><i class="fas fa-check-circle fa-lg"></i> Frågor? Maila oss på info@familyprint.se</p>

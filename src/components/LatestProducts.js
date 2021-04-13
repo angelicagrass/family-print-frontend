@@ -1,6 +1,7 @@
-import React from 'react'
+
+import React, { useState, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import products from '../products.js'
+// import products from '../products.js'
 import Product from './Product.js'
 import styled from 'styled-components'
 
@@ -10,6 +11,18 @@ const StyledDiv = styled.div`
 
 
 const LatestProducts = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let res = await fetch('https://family-print-backend-staging.herokuapp.com/getproducts')
+      res = await res.json()
+      setProducts(res)
+    }
+    fetchProducts()
+  },[])
+
   return (
     <StyledDiv>
     <h1 class="text-muted">Nyheter</h1>
