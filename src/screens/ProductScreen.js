@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup } from 'react-bootstrap'
 // import products from '../products.js'
 import Button from '../components/Button.js'
+// import Button from 'react-bootstrap/Button';
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
 import SelectedList from '../components/SelectList.js'
@@ -51,7 +52,7 @@ const ProductScreen = () => {
           <ListGroup.Item>
             Beskrivning: {product.caption}
           </ListGroup.Item>
-            <ListGroup.Item><Button primary>KÖP</Button></ListGroup.Item>
+            <ListGroup.Item><Button block>KÖP</Button></ListGroup.Item>
         </ListGroup>
       </Col>
     </Row>
