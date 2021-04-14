@@ -6,7 +6,10 @@ import styled from 'styled-components'
 const StyledBottom = styled.div`
 padding:0.3em 1.2em;
 font-size: 1rem;
-background-color: ${props => props.theme.colors.main};
+background: rgb(168,219,168);
+background: linear-gradient(344deg, rgba(168,219,168,1) 0%, rgba(131,175,155,1) 59%, rgba(100,159,131,1) 95%);
+
+/* background-color: ${props => props.theme.colors.main}; */
 outline: none;
 border: none;
 color: white;
