@@ -33,5 +33,27 @@ footer {
   border: none;
 }
 
+.dropdown-toggle {
+  position: relative !important;
+  text-decoration: none;
+}
+
+
+.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.4s ease-in-out 0s;
+}
+.dropdown-toggle:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
 `
 export default GlobalStyle
