@@ -8,13 +8,15 @@ import HomeScreen from './screens/HomeScreen.js'
 import ProductScreen from './screens/ProductScreen.js'
 import TermsScreen from './screens/TermsScreen.js'
 import CategoryScreen from './screens/CategoryScreen.js'
+import MyParallax from './components/Parallax.js'
 
 
 const App = () => {
   return (
     
     <Router>
-      <Header />
+      <MyParallax></MyParallax>
+      {/* <Header /> */}
         <Navigation />
         <Switch>
           <Route path='/' component={HomeScreen} exact />
