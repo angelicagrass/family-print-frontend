@@ -1,6 +1,7 @@
 import { Parallax, Background } from 'react-parallax';
 import styled from 'styled-components'
 import React from 'react'
+import{ Link } from 'react-router-dom'
 
 const MyDiv = styled.div`
 height: 200px;
@@ -14,14 +15,14 @@ color: ${props => props.theme.colors.main};
 const MyParallax = () => {
     return (
         <>
-        <Parallax 
+        <Parallax
             blur={{ min: -15, max: 50 }} 
-            strength={600}>
+            strength={600}>           
             <Background className="custom-bg">
                 <img src="/img/paratest2.png" alt="fill murray" />
              </Background>
             <MyDiv>
-            <i class="fas fa-shopping-bag fa-3x"></i>
+              <i class="fas fa-shopping-bag fa-3x"></i>
             </MyDiv>
         </Parallax>
         </>
