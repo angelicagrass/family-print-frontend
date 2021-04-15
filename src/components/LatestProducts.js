@@ -6,7 +6,13 @@ import Product from './Product.js'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
-  margin-top: 5vh;
+  margin-top: 20vh;
+
+  @media only screen and (max-width: ${props => props.theme.screen.medium}) {
+    margin-top: 5vh;
+
+}
+
 `
 
 
