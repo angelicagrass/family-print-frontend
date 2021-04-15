@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Footer from './components/Footer.js'
 import Navigation from './components/Navbar.js'
-import Header from './components/Header.js'
+
 import HomeScreen from './screens/HomeScreen.js'
 import ProductScreen from './screens/ProductScreen.js'
 import TermsScreen from './screens/TermsScreen.js'
