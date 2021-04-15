@@ -55,5 +55,20 @@ footer {
   visibility: visible;
   transform: scaleX(1);
 }
+
+.mycontainer .mycard:hover {
+  height: 420px;
+}
+
+.mycontainer .mycard:hover .mycontent {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.4s;
+}
+ 
+
+
+
 `
 export default GlobalStyle

@@ -4,6 +4,12 @@ const Theme = {
     lightmain: '#A8DBA8',
     dark: '#A6ADA7',
     light: '#AEBFAF', 
+  },
+  screen: {
+    mobile: '500px',
+    medium: '995px',
+    tablet: '1300px',
+    desktop: '1384px'
   }
 }
 
