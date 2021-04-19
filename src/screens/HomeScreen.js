@@ -1,13 +1,13 @@
 import React from 'react'
 import MainBox from '../components/Main.js'
-import LatestProducts from '../components/LatestProducts'
 import StartImages from '../components/StartImages.js'
+import StartContent from '../components/StartContent.js'
 
 const HomeScreen = () => {
   return (
       <MainBox>
         <StartImages />
-        <LatestProducts />
+        <StartContent />
       </MainBox>
   )
 }

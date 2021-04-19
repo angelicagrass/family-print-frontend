@@ -33,5 +33,42 @@ footer {
   border: none;
 }
 
+.dropdown-toggle {
+  position: relative !important;
+  text-decoration: none;
+}
+
+
+.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.4s ease-in-out 0s;
+}
+.dropdown-toggle:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.mycontainer .mycard:hover {
+  height: 420px;
+}
+
+.mycontainer .mycard:hover .mycontent {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.4s;
+}
+ 
+
+
+
 `
 export default GlobalStyle
