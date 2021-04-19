@@ -55,7 +55,6 @@ const ContentDiv = styled.div`
   transition: 0.3 ease-in-out;
 `
 
-
 const CustomCard = (props) => {
   return (
     <ContainerDiv className='mycontainer'>
@@ -63,6 +62,7 @@ const CustomCard = (props) => {
         <ImgDiv>
           <TheImg src="/img/miljotest.png" />
         </ImgDiv>
+        
         <ContentDiv className='mycontent'>
           <p>{props.text}</p>
         </ContentDiv>
