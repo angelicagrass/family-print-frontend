@@ -62,6 +62,7 @@ const CustomCard = (props) => {
         <ImgDiv>
           <TheImg src="/img/miljotest.png" />
         </ImgDiv>
+        
         <ContentDiv className='mycontent'>
           <p>{props.text}</p>
         </ContentDiv>
