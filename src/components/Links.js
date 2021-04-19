@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col, NavDropdown } from 'react-bootstrap'
 import fetch from 'node-fetch'
-// import categories from '../categorytest.js'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -22,7 +21,7 @@ const Links = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      let res = await fetch('https://family-print-backend-staging.herokuapp.com/getmaincategories')
+      let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getmaincategories`)
       res = await res.json()
       setCategories(res)
     }
@@ -34,7 +33,7 @@ const Links = () => {
       <Row>
       {categories.map(category => (
         <Col>
-          <NavDropdown className="alink" title={category.name} id="basic-nav-dropdown ">
+          <NavDropdown className="" title={category.name} id="basic-nav-dropdown ">
             {category.subs.map((sub) => {
               return (
               <NavDropdown.Item>
