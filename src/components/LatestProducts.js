@@ -6,7 +6,7 @@ import Product from './Product.js'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
-  margin-top: 20vh;
+  margin-top: 1vh;
 
   @media only screen and (max-width: ${props => props.theme.screen.medium}) {
     margin-top: 5vh;
@@ -15,14 +15,13 @@ const StyledDiv = styled.div`
 
 `
 
-
 const LatestProducts = () => {
 
   const [products, setProducts] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
-      let res = await fetch('https://family-print-backend-staging.herokuapp.com/getproducts')
+      let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getproducts`)
       res = await res.json()
       setProducts(res)
     }
