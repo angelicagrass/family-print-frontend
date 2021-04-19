@@ -18,7 +18,7 @@ const MyParallax = () => {
         <Parallax
             blur={{ min: -15, max: 50 }} 
             strength={600}>           
-            <Background className="custom-bg">
+            <Background href='/' className="custom-bg">
                 <img src="/img/paratest2.png" alt="fill murray" />
              </Background>
             <MyDiv>
