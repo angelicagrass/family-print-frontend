@@ -55,7 +55,6 @@ const ContentDiv = styled.div`
   transition: 0.3 ease-in-out;
 `
 
-
 const CustomCard = (props) => {
   return (
     <ContainerDiv className='mycontainer'>
