@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col, NavDropdown } from 'react-bootstrap'
-import categories from '../categorytest.js'
+import fetch from 'node-fetch'
+// import categories from '../categorytest.js'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -18,6 +19,19 @@ const StyledLink = styled(Link)`
 `
 
 const Links = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const { res } = await fetch('http://localhost:3035/getmaincategories')
+      setCategories(res)
+    }
+    fetchCategories()
+  },[])
+
+
+
+
   return (
     <div>
       <Row>

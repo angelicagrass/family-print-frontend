@@ -5,6 +5,7 @@ import products from '../products.js'
 import Button from '../components/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
+import SelectedList from '../components/SelectList.js'
 
 
 const MyDiv = styled.div`
@@ -15,16 +16,16 @@ margin-top: -4vh;
 
 const ProductScreen = () => {
   const { id } = useParams()
-
   const product = products.find((p) => p._id === id)
 
   return (
   <MainBox>
     <MyDiv>
-    <Link to='/'>
-      <Button>Gå tillbaka</Button>
-     </Link>
+      <Link to='/'>
+        <Button>Gå tillbaka</Button>
+      </Link>
     </MyDiv>
+
     <Row className='justify-content-center'>
       <Col md={5}>
         <Image src={product.image} alt={product.name} fluid />
@@ -36,6 +37,7 @@ const ProductScreen = () => {
           </ListGroup.Item>
           <ListGroup.Item>
             Pris: {product.price} sek
+            <SelectedList />
           </ListGroup.Item>
           <ListGroup.Item>
             Beskrivning: {product.description}
