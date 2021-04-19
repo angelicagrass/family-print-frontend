@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import styled from 'styled-components'
 
+
 const MyCard = styled(Card)`
 transition: all 0.6s;
 
