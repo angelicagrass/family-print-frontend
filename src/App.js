@@ -7,6 +7,7 @@ import Header from './components/Header.js'
 import HomeScreen from './screens/HomeScreen.js'
 import ProductScreen from './screens/ProductScreen.js'
 import TermsScreen from './screens/TermsScreen.js'
+
 import CategoryScreen from './screens/CategoryScreen.js'
 
 
