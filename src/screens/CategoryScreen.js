@@ -1,27 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MainBox from '../components/Main.js'
-import products from '../products.js'
 import { useParams } from 'react-router-dom'
 import Product from '../components/Product.js'
 import { Col, Row } from 'react-bootstrap'
+import styled from 'styled-components'
 
+
+const StyledDiv = styled.div`
+  margin-top: 1vh;
+`
 
 const CategoryScreen = () => {
-  const { category, subcategory } = useParams()
+  const { id } = useParams()
+  const [products, setProducts] = useState([])
 
-  const product = products.filter((p) => p.subcategory === subcategory)
-  console.log(product)
-  
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getsubcategory/${id}`)
+      res = await res.json()
+      setProducts(res)
+    }
+    fetchProducts()
+  },[id])
+
   return (
     <MainBox>
-      <h1 class="text-muted">{subcategory.replace('-', ' ')}</h1>
-     <Row className="justify-content-md-center">
-        {product.map(product => (
-          <Col sm={12} md={6} lg={4} xl={3}>
-          <Product product={product} />
-          </Col>
-        ))} 
-      </Row>
+      <StyledDiv>
+      <h1 class="text-muted">HEJ HEJ</h1>
+        <Row className="justify-content-md-center">
+          {products.map(product => (
+            <Col sm={12} md={6} lg={4} xl={3}>
+            <Product product={product} />
+            </Col>
+          ))} 
+        </Row>  
+      </StyledDiv>
     </MainBox>
   )
 }
