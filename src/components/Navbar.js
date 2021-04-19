@@ -14,9 +14,7 @@ const MyHeader = styled.header`
 position: sticky;
 top: 0;
 z-index: 1000000;
-
 `
-
 
 const Navigation = () => {
     return (
@@ -27,7 +25,7 @@ const Navigation = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                            <Links />
+                                <Links />
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
