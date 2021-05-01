@@ -42,6 +42,7 @@ const StyledSelect = styled.select`
   color: white;
   padding: 10px;
   padding-right: 38px;
+  margin-bottom: 10px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -64,7 +65,7 @@ const CustomOptions = styled.option`
     padding:0 0;
     list-style:none;
     border:1px solid #ccc;
-    background-color:white;
+    background-color: white;
     -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
