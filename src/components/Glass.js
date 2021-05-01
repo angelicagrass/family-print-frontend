@@ -7,7 +7,7 @@ const GlassDiv = styled.div`
   height: 200px;
   background-color: rgba(255,255,255,0.1);
   padding: 50px;
-  margin-top: -31vh;
+  margin-top: -380px;
   margin-left: -5vh;
   z-index: 100000;
   border-radius: 8px;
@@ -23,7 +23,6 @@ const GlassDiv = styled.div`
 @-moz-document url-prefix() {
   background-color: rgba(255,255,255,0.1);
 }
-
 
 @media only screen and (max-width: ${props => props.theme.screen.medium}) {
   display: none;
