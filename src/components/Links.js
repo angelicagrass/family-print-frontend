@@ -31,12 +31,12 @@ const Links = () => {
   return (
     <div>
       <Row>
-      {categories.map(category => (
+      {categories.map((category, index) => (
         <Col>
-          <NavDropdown className="" title={category.name} id="basic-nav-dropdown ">
-            {category.subs.map((sub) => {
+          <NavDropdown key={index} className="" title={category.name} id="basic-nav-dropdown ">
+            {category.subs.map((sub, index) => {
               return (
-              <NavDropdown.Item>
+              <NavDropdown.Item key={index}>
                 <StyledLink to= {`/${category.url}/${sub.url} `}>{sub.name}</StyledLink>
               </NavDropdown.Item>
               )
