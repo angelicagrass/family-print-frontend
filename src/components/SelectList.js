@@ -42,6 +42,7 @@ const StyledSelect = styled.select`
   color: white;
   padding: 10px;
   padding-right: 38px;
+  margin-bottom: 10px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -64,7 +65,7 @@ const CustomOptions = styled.option`
     padding:0 0;
     list-style:none;
     border:1px solid #ccc;
-    background-color:white;
+    background-color: white;
     -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
@@ -75,9 +76,9 @@ const SelectList = () => {
     <StyledDiv>
       <StyledSelect class="form-select" aria-label="Default select example">
             <CustomOptions selected>STORLEK</CustomOptions>
-            <option value="1">A4</option>
-            <option value="2">30 x 40cm</option>
-            <option value="3">50 x 70cm</option>
+              <option value="1">A4</option>
+              <option value="2">30 x 40cm</option>
+              <option value="3">50 x 70cm</option>
       </StyledSelect>
       <IcondDiv><i class="fas fa-chevron-circle-down fa-lg"></i></IcondDiv>
     </StyledDiv>
