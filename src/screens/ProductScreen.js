@@ -5,18 +5,21 @@ import Button from '../components/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
 import { StateContext } from '../globalstate/GlobalState.js'
+import SelectedList from '../components/SelectList.js'
 
 const MyDiv = styled.div`
 float: left;
 margin-top: -4vh;
 `
 
-const ProductScreen = () => {
+const ThumbImagesDiv = styled.div`
 
-  
+
+`
+
+const ProductScreen = () => {
   const { id } = useParams()
   const [product, setProduct] = useState([])
-
   const { cartItems, setCartItems } = React.useContext(StateContext)
 
   useEffect(() => {
@@ -40,30 +43,28 @@ const ProductScreen = () => {
       <Col md={5}>
         <Image src={product.imageurl} alt={product.name} fluid />
       </Col>
-
       <Col md={4}>
         <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>{product.name}</h2>
             </ListGroup.Item>
-                <ListGroup.Item>
-                  Pris: {product.price} sek
-                  </ListGroup.Item>
-                  {/* <SelectedList /> */}
-                {/* </ListGroup.Item>
-                <ListGroup.Item>
-                  Beskrivning: {product.caption}
-                </ListGroup.Item> */}
-
             <ListGroup.Item>
-              <Button onClick={() => {
-            setCartItems([...cartItems, {...product}])
-            console.log(cartItems)}}>KÖP</Button>
+              Pris: {product.price} sek
             </ListGroup.Item>
-
+            <ListGroup.Item>
+              <SelectedList />
+                <Button onClick={() => {
+                setCartItems([...cartItems, {...product}])
+                console.log(cartItems)}}>KÖP</Button>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Beskrivning: {product.caption}
+            </ListGroup.Item> 
         </ListGroup>
       </Col>
     </Row>
+    <ThumbImagesDiv></ThumbImagesDiv>
+
       <br></br>
       <p><i className="fas fa-check-circle fa-lg"></i> Betala säkert med Klarna Checkout!</p>
       <p><i className="fas fa-check-circle fa-lg"></i> Frågor? Maila oss på info@familyprint.se</p>
