@@ -16,15 +16,24 @@ const MyLastText = styled.h1`
   padding-bottom: 10px;
 `
 
+const MyImage = styled(Image)`
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+@media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  margin-top: 0px;
+}
+`
+
 const StartImages = () => {
   return (
     <Container>
       <Row xs={1} md={2} >
         <Col>
-          <Image style={{marginTop: '10px'}} src="/img/start-image-1.jpg" rounded fluid/>
+          <MyImage src="/img/start-image-1.jpg" rounded fluid/>
         </Col>
         <Col>
-          <Image style={{marginTop: '10px'}} src="/img/start-image-2.jpg" rounded fluid/>
+          <MyImage src="/img/start-image-2.jpg" rounded fluid/>
         </Col>
       </Row>
       <Glass>
