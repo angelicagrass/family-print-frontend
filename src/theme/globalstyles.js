@@ -9,10 +9,6 @@ body {
   background-color: #ebebeb;
 }
 
-.navbar {
-  
-}
-
 .darkcolor {
   color: ${props => props.theme.colors.main};
 }
