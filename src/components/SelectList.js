@@ -27,7 +27,6 @@ const IcondDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `
 
 const StyledSelect = styled.select`
@@ -69,8 +68,6 @@ const CustomOptions = styled.option`
     -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-
-
 `
 
 const SelectList = () => {
