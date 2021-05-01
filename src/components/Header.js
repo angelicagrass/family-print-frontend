@@ -31,8 +31,13 @@ const StyledBag = styled.div`
 const Header = () => {
     return (
         <StyledHeader>
-            <StyledBag><i class="fas fa-shopping-bag fa-3x"></i></StyledBag>
-                <Link to='/'><StyledImg /></Link>
+            <StyledBag>
+                <Link to='/kassa'>
+                    <i class="fas fa-shopping-bag fa-3x"></i>
+                </Link>
+                
+                </StyledBag>
+                <StyledImg />
             <GradientDiv></GradientDiv>
         </StyledHeader>
     )
