@@ -2,7 +2,6 @@ import React from 'react'
 import MainBox from '../components/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
-
 import { Col, Row, Container, Image } from 'react-bootstrap'
 
 const MyContainer = styled(Container)`
@@ -14,7 +13,7 @@ const MyRow = styled(Row)`
 `
 
 const CartScreen = () => {
-  const { cartItems, setCartItems } = React.useContext(StateContext)
+  const { cartItems } = React.useContext(StateContext)
   return (
       <MainBox>
         {cartItems.map(item => (
