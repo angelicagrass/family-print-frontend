@@ -6,7 +6,7 @@ const Theme = {
     light: '#AEBFAF', 
   },
   screen: {
-    mobile: '500px',
+    mobile: '650px',
     medium: '995px',
     tablet: '1300px',
     desktop: '1384px'

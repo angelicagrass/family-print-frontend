@@ -2,7 +2,6 @@ import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
 import styled from 'styled-components'
 
-
 const StyledBottom = styled.div`
   padding:0.3em 1.2em;
   font-size: 1rem;
@@ -39,13 +38,14 @@ const Footer = () => {
             <p><a href="/kopvillkor">Köpvillkor &amp; Info</a></p>
             <SocialDiv>
                 <i className="fab fa-facebook fa-2x darkcolor"></i>
-                <i class="fab fa-instagram-square fa-2x darkcolor"></i>
-                <i class="fas fa-envelope fa-2x darkcolor"></i>
+                <i className="fab fa-instagram-square fa-2x darkcolor"></i>
+                <i className="fas fa-envelope fa-2x darkcolor"></i>
             </SocialDiv>
           </MDBCol>
           <MDBCol md="6"></MDBCol>
         </MDBRow>
       </MDBContainer>
+
       <StyledBottom>
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid>
@@ -53,6 +53,7 @@ const Footer = () => {
           </MDBContainer>
         </div>
       </StyledBottom>
+
     </MDBFooter>
     )
 }

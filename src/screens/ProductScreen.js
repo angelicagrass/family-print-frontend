@@ -4,16 +4,23 @@ import { Row, Col, Image, ListGroup } from 'react-bootstrap'
 import Button from '../components/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
-import ProductActions from '../components/ProductActions.js'
+import { StateContext } from '../globalstate/GlobalState.js'
+import SelectedList from '../components/SelectList.js'
 
 const MyDiv = styled.div`
 float: left;
 margin-top: -4vh;
 `
 
+const ThumbImagesDiv = styled.div`
+
+
+`
+
 const ProductScreen = () => {
   const { id } = useParams()
   const [product, setProduct] = useState([])
+  const { cartItems, setCartItems } = React.useContext(StateContext)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,7 +43,6 @@ const ProductScreen = () => {
       <Col md={5}>
         <Image src={product.imageurl} alt={product.name} fluid />
       </Col>
-
       <Col md={4}>
         <ListGroup variant='flush'>
             <ListGroup.Item>
@@ -44,22 +50,25 @@ const ProductScreen = () => {
             </ListGroup.Item>
             <ListGroup.Item>
               Pris: {product.price} sek
-              {/* <SelectedList /> */}
-              <ProductActions>{product}</ProductActions>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <SelectedList />
+                <Button onClick={() => {
+                setCartItems([...cartItems, {...product}])
+                console.log(cartItems)}}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item>
               Beskrivning: {product.caption}
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Button block>KÖP</Button>
-            </ListGroup.Item>
+            </ListGroup.Item> 
         </ListGroup>
       </Col>
     </Row>
+    <ThumbImagesDiv></ThumbImagesDiv>
+
       <br></br>
-      <p><i class="fas fa-check-circle fa-lg"></i> Betala säkert med Klarna Checkout!</p>
-      <p><i class="fas fa-check-circle fa-lg"></i> Frågor? Maila oss på info@familyprint.se</p>
-      <p><i class="fas fa-check-circle fa-lg"></i> Leveranstid upp till 10 arbetsdagar.</p>
+      <p><i className="fas fa-check-circle fa-lg"></i> Betala säkert med Klarna Checkout!</p>
+      <p><i className="fas fa-check-circle fa-lg"></i> Frågor? Maila oss på info@familyprint.se</p>
+      <p><i className="fas fa-check-circle fa-lg"></i> Leveranstid upp till 10 arbetsdagar.</p>
   </MainBox>
   )
 }

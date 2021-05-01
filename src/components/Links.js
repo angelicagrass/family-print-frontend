@@ -16,6 +16,12 @@ const StyledLink = styled(Link)`
   }
 `
 
+const MyRow = styled(Row)`
+@media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  all: unset;
+}
+`
+
 const Links = () => {
   const [categories, setCategories] = useState([])
 
@@ -30,13 +36,13 @@ const Links = () => {
 
   return (
     <div>
-      <Row>
-      {categories.map(category => (
+      <MyRow>
+      {categories.map((category, index) => (
         <Col>
-          <NavDropdown className="" title={category.name} id="basic-nav-dropdown ">
-            {category.subs.map((sub) => {
+          <NavDropdown key={index} className="" title={category.name} id="basic-nav-dropdown ">
+            {category.subs.map((sub, index) => {
               return (
-              <NavDropdown.Item>
+              <NavDropdown.Item key={index}>
                 <StyledLink to= {`/${category.url}/${sub.url} `}>{sub.name}</StyledLink>
               </NavDropdown.Item>
               )
@@ -44,7 +50,7 @@ const Links = () => {
           </NavDropdown>
         </Col>
       ))} 
-      </Row>
+      </MyRow>
     </div>
   )
 }
