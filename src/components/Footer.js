@@ -2,7 +2,6 @@ import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
 import styled from 'styled-components'
 
-
 const StyledBottom = styled.div`
   padding:0.3em 1.2em;
   font-size: 1rem;
@@ -46,6 +45,7 @@ const Footer = () => {
           <MDBCol md="6"></MDBCol>
         </MDBRow>
       </MDBContainer>
+
       <StyledBottom>
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid>
@@ -53,6 +53,7 @@ const Footer = () => {
           </MDBContainer>
         </div>
       </StyledBottom>
+
     </MDBFooter>
     )
 }
