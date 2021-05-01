@@ -39,8 +39,8 @@ const Footer = () => {
             <p><a href="/kopvillkor">Köpvillkor &amp; Info</a></p>
             <SocialDiv>
                 <i className="fab fa-facebook fa-2x darkcolor"></i>
-                <i class="fab fa-instagram-square fa-2x darkcolor"></i>
-                <i class="fas fa-envelope fa-2x darkcolor"></i>
+                <i className="fab fa-instagram-square fa-2x darkcolor"></i>
+                <i className="fas fa-envelope fa-2x darkcolor"></i>
             </SocialDiv>
           </MDBCol>
           <MDBCol md="6"></MDBCol>
