@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
-// import products from '../products.js'
 import Product from './Product.js'
 import styled from 'styled-components'
 

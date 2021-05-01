@@ -13,7 +13,7 @@ const MyLastText = styled.h1`
   margin: 0;
   font-weight: 900;
   border-bottom: 4px solid white;
-padding-bottom: 10px;
+  padding-bottom: 10px;
 `
 
 const StartImages = () => {
