@@ -20,7 +20,7 @@ const Navigation = () => {
     return (
         <MyHeader>
             <GradientDiv />
-                <Navbar className="navbar" bg="light" variant='light' expand="lg"   collapseOnSelect>
+                <Navbar className="navbar" bg="light" variant='light' expand="lg" collapseOnSelect>
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
