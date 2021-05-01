@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import GlobalState, { StateContext } from './globalstate/GlobalState.js'
+import React from 'react'
+import GlobalState from './globalstate/GlobalState.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Footer from './components/Footer.js'
 import Navigation from './components/Navbar.js'
