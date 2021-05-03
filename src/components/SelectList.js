@@ -55,32 +55,32 @@ const StyledSelect = styled.select`
 `
 
 const CustomOptions = styled.option`
-    display:none;
-    position:absolute;
-    top:100%;
-    right:0;
-    left:0;
-    z-index:999;
-    margin:0 0;
-    padding:0 0;
-    list-style:none;
-    border:1px solid #ccc;
-    background-color: white;
-    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  display:none;
+  position:absolute;
+  top:100%;
+  right:0;
+  left:0;
+  z-index:999;
+  margin:0 0;
+  padding:0 0;
+  list-style:none;
+  border:1px solid #ccc;
+  background-color: white;
+  -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
 `
 
 const SelectList = () => {
   return (
     <StyledDiv>
-      <StyledSelect class="form-select" aria-label="Default select example">
+      <StyledSelect className="form-select" aria-label="Default select example">
             <CustomOptions selected>STORLEK</CustomOptions>
               <option value="1">A4</option>
               <option value="2">30 x 40cm</option>
               <option value="3">50 x 70cm</option>
       </StyledSelect>
-      <IcondDiv><i class="fas fa-chevron-circle-down fa-lg"></i></IcondDiv>
+      <IcondDiv><i className="fas fa-chevron-circle-down fa-lg"></i></IcondDiv>
     </StyledDiv>
   )
 }
