@@ -36,21 +36,13 @@ const Links = () => {
 
   return (
     <div>
-      <MyRow>
-      {categories.map((category, index) => (
-        <Col>
-          <NavDropdown key={index} className="" title={category.name} id="basic-nav-dropdown ">
-            {category.subs.map((sub, index) => {
-              return (
-              <NavDropdown.Item key={index}>
-                <StyledLink to= {`/${category.url}/${sub.url} `}>{sub.name}</StyledLink>
-              </NavDropdown.Item>
-              )
-            })}
-          </NavDropdown>
-        </Col>
-      ))} 
-      </MyRow>
+      <MyRow> {categories.map((category, index) => (
+        <Col key={index}>
+          <NavDropdown key={index} className="" title={category.name} id="basic-nav-dropdown "> {category.subs.map((sub, index) => { return (
+            <NavDropdown.Item key={index}>
+              <StyledLink to={ `/${category.url}/${sub.url} `} key={index}>{sub.name}</StyledLink>
+            </NavDropdown.Item> ) })} </NavDropdown>
+        </Col> ))} </MyRow>
     </div>
   )
 }
