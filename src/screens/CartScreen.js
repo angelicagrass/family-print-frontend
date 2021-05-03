@@ -5,17 +5,28 @@ import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
 
 const MyContainer = styled(Container)`
-border: 2px solid black;
-margin-top: 10px;
+  border-top: 2px solid lightgrey;
+  margin-top: 10px;
+  padding-top: 5px;
 `
 
 const MyRow = styled(Row)`
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+`
+
+const OrderDiv = styled.div`
+  
+
+
 `
 
 const CartScreen = () => {
   const { cartItems } = React.useContext(StateContext)
   return (
       <MainBox>
+        <OrderDiv></OrderDiv>
         {cartItems.map(item => (
           <MyContainer>
             <MyRow>

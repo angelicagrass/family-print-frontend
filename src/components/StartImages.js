@@ -28,13 +28,11 @@ const MyImage = styled(Image)`
 const StartImages = () => {
   return (
     <Container>
-      <Row xs={1} md={2} >
+      <Row xs={1} md={2}>
         <Col>
-          <MyImage src="/img/start-image-1.jpg" rounded fluid/>
-        </Col>
+          <MyImage src="/img/start-image-1.jpg" rounded fluid/> </Col>
         <Col>
-          <MyImage src="/img/start-image-2.jpg" rounded fluid/>
-        </Col>
+          <MyImage src="/img/start-image-2.jpg" rounded fluid/> </Col>
       </Row>
       <Glass>
         <MyText>ERBJUDANDE</MyText>

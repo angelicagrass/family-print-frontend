@@ -9,12 +9,10 @@ import GlobalStyle from './theme/globalstyles.js'
 import Theme from './theme/theme.js'
 
 ReactDOM.render(
-  <React.StrictMode>
     <ThemeProvider theme={Theme}>
     <GlobalStyle />
     <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+    </ThemeProvider>,
   document.getElementById('root')
 );
 
