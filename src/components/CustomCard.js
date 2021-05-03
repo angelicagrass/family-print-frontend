@@ -60,9 +60,7 @@ const CustomCard = (props) => {
     <ContainerDiv className='mycontainer'>
       <CardDiv className='mycard'>
         <ImgDiv>
-          <TheImg src="/img/miljotest.png" />
-        </ImgDiv>
-        
+          <TheImg src="/img/miljotest.png" /> </ImgDiv>
         <ContentDiv className='mycontent'>
           <p>{props.text}</p>
         </ContentDiv>
