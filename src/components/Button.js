@@ -5,15 +5,16 @@ const StyledButton = styled.button`
   padding:0.6em 1.3em;
   width: 100%;
   font-size: 1rem;
-  background-color: ${props => props.theme.colors.main};
+  background: ${props => props.theme.colors.main};
   outline: none;
   border: none;
   color: white;
   border-radius: 1px;
-  transition: all 0.4s;
+  transition: all 0.6s;
 
 &:hover {
-  background-color: ${props => props.theme.colors.lightmain};
+  background: ${props => props.theme.colors.lightmain};
+
 }
 `
 
