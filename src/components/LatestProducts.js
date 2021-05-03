@@ -9,13 +9,10 @@ const StyledDiv = styled.div`
 
   @media only screen and (max-width: ${props => props.theme.screen.medium}) {
     margin-top: 5vh;
-
 }
-
 `
 
 const LatestProducts = () => {
-
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -29,14 +26,10 @@ const LatestProducts = () => {
 
   return (
     <StyledDiv>
-    <h1 class="text-muted">Nyheter</h1>
-    <Row className="justify-content-md-center">
-      {products.map(product => (
+      <h1 class="text-muted">Nyheter</h1>
+      <Row className="justify-content-md-center"> {products.map(product => (
         <Col sm={12} md={6} lg={4} xl={3}>
-         <Product product={product} />
-        </Col>
-      ))} 
-    </Row>  
+          <Product product={product} /> </Col> ))} </Row>
     </StyledDiv>
   )
 }
