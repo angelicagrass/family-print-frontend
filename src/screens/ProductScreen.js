@@ -75,7 +75,7 @@ const ProductScreen = () => {
             <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
             <ListGroup.Item>
               <SelectedList />
-              <Button onClick={()=> { setCartItems([...cartItems, {...product}]) 
+              <Button block onClick={()=> { setCartItems([...cartItems, {...product}]) 
               }}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item> Beskrivning: {product.caption} </ListGroup.Item>

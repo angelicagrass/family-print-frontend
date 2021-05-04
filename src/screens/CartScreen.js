@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
 import Button from '../components/Button.js'
 
-
 const MyContainer = styled(Container)`
   border-top: 2px solid lightgrey;
   margin-top: 10px;
@@ -17,7 +16,6 @@ const MyRow = styled(Row)`
   text-align: center;
   vertical-align: middle;
   line-height: 70px;
-  
 `
 
 const OrderDiv = styled.div`
@@ -53,7 +51,7 @@ const PriceDiv = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   border:3px #ebebeb solid;
-  height: 100px;
+  height: 150px;
   width: 80%;
   margin: 30px auto; 
   padding-top: 20px;
@@ -81,9 +79,11 @@ const CartScreen = () => {
           </MyRow>
         </MyContainer> ))} </div>
       <PriceDiv>
-      <Button>ANGE VÄRDEKOD</Button>
+      <Button >ANGE VÄRDEKOD</Button>
         <h3>Totalt: 398 SEK</h3></PriceDiv>
-        
+        <HeaderLine></HeaderLine>
+          <MyImage src={ '/img/slutforkop.jpg'} />
+
     </MainBox>
   )
 }
