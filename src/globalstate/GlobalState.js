@@ -6,6 +6,7 @@ export default function GlobalState({ children }) {
   
   const itemsInCartFromLocalStorage = localStorage.getItem('itemsInCart') ? JSON.parse(localStorage.getItem('itemsInCart')) : []
   const [cartItems, setCartItems] = useState([itemsInCartFromLocalStorage])
+  
  
   const state = {
     setCartItems: setCartItems,
