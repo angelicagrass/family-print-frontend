@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { StateContext } from '../globalstate/GlobalState.js'
 import SelectedList from '../components/SelectList.js'
 
+
 const MyDiv = styled.div`
   float: left;
   margin-top: -4vh;
@@ -75,7 +76,7 @@ const ProductScreen = () => {
             <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
             <ListGroup.Item>
               <SelectedList />
-              <Button onClick={()=> { setCartItems([...cartItems, {...product}]) 
+              <Button block onClick={()=> { setCartItems([...cartItems, {...product}]) 
               }}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item> Beskrivning: {product.caption} </ListGroup.Item>
