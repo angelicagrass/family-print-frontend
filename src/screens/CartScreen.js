@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainBox from '../components/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
 import Button from '../components/Button.js'
+// import StyledCounter from '../importedComponents/ProductActions.js'
+import Dot from '../importedComponents/Dot.js'
+
 
 const MyContainer = styled(Container)`
   border-top: 2px solid lightgrey;
@@ -20,11 +23,12 @@ const MyRow = styled(Row)`
 
 const OrderDiv = styled.div`
   position: relative;
-  height: 70px;
+  height: 50px;
   background-color: #ebebeb;
   width: 90%;
   margin: 0 auto 30px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  z-index: 100;
 `
 
 const MyText = styled.p`
@@ -50,42 +54,82 @@ const PriceDiv = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  border:3px #ebebeb solid;
+
   height: 150px;
   width: 80%;
   margin: 30px auto; 
   padding-top: 20px;
 `
 
+const StyledNumber = styled.div`
+  display: inline-flex;
+  position: relative;
+  z-index: 0;
+  margin-left: 8px;
+  width: 40px;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: linear-gradient(90deg, rgba(180,180,180,0.60) 0%, rgba(172,172,172,0.53) 43%, rgba(167,165,165,0.57) 61%);
+  backdrop-filter: brightness(150%) saturate(150%) blur(5px);
+  background-clip: padding-box;
+  color: rgba(0, 0, 0, 0.7);
+  height: 40px;
+`
+const StyledCounter = styled.div`
+  position: relative;
+  /* justify-content: left;
+  align-items: left; */
+  padding: 10px;
+  width: 150px;
+  margin: 0 auto;
+
+`
+
 const CartScreen = () => {
   const { cartItems } = React.useContext(StateContext)
+  const [numberOfItems, setNumberOfItems] = useState(1)
+
   return (
     <MainBox>
+    <div>
+      <OrderDiv>
+        <MyText><i class="fas fa-truck"></i>...Psst! Visste du att du får fri frakt om du handlar för över 500 SEK</MyText>
+      </OrderDiv>
       <div>
-        <OrderDiv>
-          <MyText><i class="fas fa-truck"></i>...Psst! Visste du att du får fri frakt om du handlar för över 500 SEK</MyText>
-        </OrderDiv>
-        <div>
           <HeaderLine></HeaderLine>
-          <MyImage src={ '/img/dinavaror.jpg'} /> </div> {cartItems.map(item => (
-        <MyContainer>
-          <MyRow>
-            <Col md={3}>
-              <Image src={item.imageurl} width="70px"></Image>
-            </Col>
-            <Col md={3}>{item.name}</Col>
-            <Col md={3}>{item.price} SEK</Col>
-            <Col md={3}><i class="fas fa-trash-alt"></i></Col>
-          </MyRow>
-        </MyContainer> ))} </div>
+          <MyImage src={ '/img/dinavaror.jpg'} /></div> 
+          {cartItems.length
+      <=1 ? (<h2>Varukorgen är tom</h2>) : (cartItems.map(item => (
+        <>
+          <MyContainer>
+            <MyRow>
+              <Col md={2}>
+                <Image src={item.imageurl} width="70px"></Image>
+              </Col>
+              <Col md={3}>{item.name}</Col>
+              <Col md={3} style={{margin: '0 auto 30px auto'}}>
+                <StyledCounter>
+                  <Dot onClick={()=> setNumberOfItems(numberOfItems - 1)} btnType={'counterBtn'}>-</Dot>
+                  <StyledNumber>{numberOfItems}</StyledNumber>
+                  <Dot onClick={()=> setNumberOfItems(numberOfItems + 1)} btnType={'counterBtn'}>+</Dot>
+                </StyledCounter>
+              </Col>
+              <Col md={2}>{item.price} SEK</Col>
+              <Col md={2}><i class="fas fa-trash-alt"></i></Col>
+            </MyRow>
+          </MyContainer>
+          </> )) )} {cartItems.length
+          <=1 ? ( <div></div> ) : (
+    <div>
       <PriceDiv>
-      <Button >ANGE VÄRDEKOD</Button>
+        <Button>ANGE VÄRDEKOD</Button>
         <h3>Totalt: 398 SEK</h3></PriceDiv>
-        <HeaderLine></HeaderLine>
-          <MyImage src={ '/img/slutforkop.jpg'} />
-
-    </MainBox>
-  )
+      <HeaderLine></HeaderLine>
+      <MyImage src={ '/img/slutforkop.jpg'} /> </div> )} </div>
+  </MainBox> )
 }
 
 export default CartScreen
