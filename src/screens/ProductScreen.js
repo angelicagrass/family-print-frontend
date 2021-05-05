@@ -50,6 +50,8 @@ const ProductScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
 
+  const [qty, setQty] = useState(0)
+
   useEffect(() => {
     const fetchProducts = async () => {
       let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getproduct/${id}`)
