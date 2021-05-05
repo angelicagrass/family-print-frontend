@@ -49,8 +49,9 @@ const ProductScreen = () => {
   const [product, setProduct] = useState([])
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
+  const {qty, setQty} = React.useContext(StateContext)
 
-  const [qty, setQty] = useState(0)
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -79,6 +80,8 @@ const ProductScreen = () => {
             <ListGroup.Item>
               <SelectedList />
               <Button block onClick={()=> { setCartItems([...cartItems, {...product}]) 
+              setQty(qty + 1)
+              
               }}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item> Beskrivning: {product.caption} </ListGroup.Item>
