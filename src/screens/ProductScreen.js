@@ -62,8 +62,6 @@ const ProductScreen = () => {
     fetchProducts()
   },[id])
 
-  const localIndex = cartItems.findIndex(obj => obj.id === product.id)
-
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x.id === product.id)
 
