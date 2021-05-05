@@ -64,31 +64,14 @@ const ProductScreen = () => {
 
   const localIndex = cartItems.findIndex(obj => obj.id === product.id)
 
-  console.log(localIndex)
-
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x.id === product.id)
 
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) => 
-        x.id === product.id ? {...exist, qtyInCart: exist.qtyInCart + 1} : x)
-
-
-
-      )
-   
-
-
-    } else {
-      setCartItems([...cartItems, {...product}]) 
-    }
-
-
-
-
-
-
+    !exist
+    ? setCartItems([...cartItems, {...product}])
+    : setCartItems(cartItems.map((x) => x.id === product.id 
+    ? {...exist, qtyInCart: exist.qtyInCart + 1} 
+    : x))
   }
 
   return (
