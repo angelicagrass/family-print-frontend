@@ -62,6 +62,35 @@ const ProductScreen = () => {
     fetchProducts()
   },[id])
 
+  const localIndex = cartItems.findIndex(obj => obj.id === product.id)
+
+  console.log(localIndex)
+
+  const checkItemsInLocaleStorage = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id)
+
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) => 
+        x.id === product.id ? {...exist, qtyInCart: exist.qtyInCart + 1} : x)
+
+
+
+      )
+   
+
+
+    } else {
+      setCartItems([...cartItems, {...product}]) 
+    }
+
+
+
+
+
+
+  }
+
   return (
   <MainBox>
     {/* <MyDiv>
@@ -79,8 +108,16 @@ const ProductScreen = () => {
             <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
             <ListGroup.Item>
               <SelectedList />
-              <Button block onClick={()=> { setCartItems([...cartItems, {...product}]) 
-              setQty(qty + 1)
+              
+              <Button block onClick={()=> { 
+                      checkItemsInLocaleStorage(product)
+
+  
+                
+                
+              //   setCartItems([...cartItems, {...product}]) 
+              // setQty(qty + 1)
+              
               
               }}>KÖP</Button>
             </ListGroup.Item>
