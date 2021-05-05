@@ -113,7 +113,7 @@ const CartScreen = () => {
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
                 <StyledCounter>
                   <Dot onClick={()=> setNumberOfItems(numberOfItems - 1)} btnType={'counterBtn'}>-</Dot>
-                  <StyledNumber>{numberOfItems}</StyledNumber>
+                  <StyledNumber>{item.qtyInCart}</StyledNumber>
                   <Dot onClick={()=> setNumberOfItems(numberOfItems + 1)} btnType={'counterBtn'}>+</Dot>
                 </StyledCounter>
               </Col>
