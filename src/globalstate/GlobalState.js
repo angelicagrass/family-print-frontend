@@ -15,6 +15,7 @@ export default function GlobalState({ children }) {
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
+
   }, [cartItems])
 
   return (
