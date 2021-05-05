@@ -4,12 +4,12 @@ export const StateContext = React.createContext(null)
 
 export default function GlobalState({ children }) {
   const initialQty = () => Number(localStorage.getItem('qtyInCart') || 0)
+
   
-  const itemsInCartFromLocalStorage = localStorage.getItem('itemsInCart') ? JSON.parse(localStorage.getItem('itemsInCart')) : []
+  const itemsInCartFromLocalStorage = () => localStorage.getItem('itemsInCart') ? JSON.parse(localStorage.getItem('itemsInCart')) : []
   const [cartItems, setCartItems] = useState([itemsInCartFromLocalStorage])
   const [qty, setQty] = useState(initialQty)
   
- 
   const state = {
     setCartItems: setCartItems,
     cartItems: cartItems,
