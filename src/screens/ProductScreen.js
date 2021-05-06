@@ -49,9 +49,6 @@ const ProductScreen = () => {
   const [product, setProduct] = useState([])
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
-  const {qty, setQty} = React.useContext(StateContext)
-
-
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -60,14 +57,14 @@ const ProductScreen = () => {
       setProduct(res)
     }
     fetchProducts()
-  },[id])
+  },[])
 
   const checkItemsInLocaleStorage = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id)
+    const exist = cartItems.find((x) => x._id === product._id)
 
     !exist
     ? setCartItems([...cartItems, {...product}])
-    : setCartItems(cartItems.map((x) => x.id === product.id 
+    : setCartItems(cartItems.map((x) => x._id === product._id 
     ? {...exist, qtyInCart: exist.qtyInCart + 1} 
     : x))
   }
@@ -92,14 +89,6 @@ const ProductScreen = () => {
               
               <Button block onClick={()=> { 
                       checkItemsInLocaleStorage(product)
-
-  
-                
-                
-              //   setCartItems([...cartItems, {...product}]) 
-              // setQty(qty + 1)
-              
-              
               }}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item> Beskrivning: {product.caption} </ListGroup.Item>
