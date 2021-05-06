@@ -91,6 +91,7 @@ const StyledCounter = styled.div`
 
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
+  const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
 
   function decrementQty (index) {
     const newArray = [...cartItems]
@@ -123,8 +124,9 @@ const CartScreen = () => {
       <div>
           <HeaderLine></HeaderLine>
           <MyImage src={ '/img/dinavaror.jpg'} /></div> 
-          {cartItems.length
-      <=1 ? (<h2>Varukorgen är tom</h2>) : (cartItems.map((item, index) => (
+          {cartItems.length <=1 
+      ? (<h2>Varukorgen är tom</h2>) 
+      : (cartItems.map((item, index) => (
         <>
           <MyContainer>
             <MyRow>
@@ -133,32 +135,23 @@ const CartScreen = () => {
               </Col>
               <Col md={3}>{item.name}</Col>
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
-
-
-
                 <StyledCounter>
                   <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
                   <StyledNumber>{item.qtyInCart}</StyledNumber>
                   <Dot onClick={()=> increaseQty(index)} btnType={'counterBtn'}>+</Dot>
                 </StyledCounter>
-
-
-
-
-
               </Col>
               <Col md={2}>{item.price * item.qtyInCart} SEK</Col>
               <Col md={2}><button onClick={() => {remove(index)}} class="fas fa-trash-alt"></button></Col>
             </MyRow>
           </MyContainer>
-          </> )) )} {cartItems.length
-          <=1 ? ( <div></div> ) : (
-    <div>
-      <PriceDiv>
-        <Button>ANGE VÄRDEKOD</Button>
-        <h3>Totalt: 398 SEK</h3></PriceDiv>
-      <HeaderLine></HeaderLine>
-      <MyImage src={ '/img/slutforkop.jpg'} /> </div> )} </div>
+          </> )) )} {!cartItems.length <=1 && 
+          <div>
+            <PriceDiv>
+              <Button>ANGE VÄRDEKOD</Button>
+              <h3>Totalt: {totalPrice} SEK</h3></PriceDiv>
+            <HeaderLine></HeaderLine>
+            <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
   </MainBox> )
 }
 
