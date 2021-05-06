@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// Davids
+
 const StyledDot = styled.div`
 
 display: inline-flex;
