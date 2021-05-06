@@ -60,7 +60,7 @@ const PriceDiv = styled.div`
   margin: 30px auto; 
   padding-top: 20px;
 `
-
+// Davids
 const StyledNumber = styled.div`
   display: inline-flex;
   position: relative;
@@ -78,6 +78,7 @@ const StyledNumber = styled.div`
   color: rgba(0, 0, 0, 0.7);
   height: 40px;
 `
+// Davids
 const StyledCounter = styled.div`
   position: relative;
   /* justify-content: left;
@@ -89,8 +90,29 @@ const StyledCounter = styled.div`
 `
 
 const CartScreen = () => {
-  const { cartItems } = React.useContext(StateContext)
-  const [numberOfItems, setNumberOfItems] = useState(1)
+  const { cartItems, setCartItems } = React.useContext(StateContext)
+
+  function decrementQty (index) {
+    const newArray = [...cartItems]
+    newArray[index].qtyInCart -= 1
+
+    newArray[index].qtyInCart === 0 
+      ? setCartItems(newArray.filter(item => item !== newArray[index]))
+      : setCartItems(newArray)
+  }
+
+  function increaseQty (index) {
+    const newArray = [...cartItems]
+    newArray[index].qtyInCart += 1
+    setCartItems(newArray)
+  }
+
+  function remove (index) {
+    const newArray = [...cartItems]
+    setCartItems(newArray.filter(item => item !== newArray[index]))
+  }
+
+
 
   return (
     <MainBox>
@@ -102,7 +124,7 @@ const CartScreen = () => {
           <HeaderLine></HeaderLine>
           <MyImage src={ '/img/dinavaror.jpg'} /></div> 
           {cartItems.length
-      <=1 ? (<h2>Varukorgen är tom</h2>) : (cartItems.map(item => (
+      <=1 ? (<h2>Varukorgen är tom</h2>) : (cartItems.map((item, index) => (
         <>
           <MyContainer>
             <MyRow>
@@ -111,14 +133,22 @@ const CartScreen = () => {
               </Col>
               <Col md={3}>{item.name}</Col>
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
+
+
+
                 <StyledCounter>
-                  <Dot onClick={()=> setNumberOfItems(numberOfItems - 1)} btnType={'counterBtn'}>-</Dot>
+                  <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
                   <StyledNumber>{item.qtyInCart}</StyledNumber>
-                  <Dot onClick={()=> setNumberOfItems(numberOfItems + 1)} btnType={'counterBtn'}>+</Dot>
+                  <Dot onClick={()=> increaseQty(index)} btnType={'counterBtn'}>+</Dot>
                 </StyledCounter>
+
+
+
+
+
               </Col>
-              <Col md={2}>{item.price} SEK</Col>
-              <Col md={2}><i class="fas fa-trash-alt"></i></Col>
+              <Col md={2}>{item.price * item.qtyInCart} SEK</Col>
+              <Col md={2}><button onClick={() => {remove(index)}} class="fas fa-trash-alt"></button></Col>
             </MyRow>
           </MyContainer>
           </> )) )} {cartItems.length
