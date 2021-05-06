@@ -57,7 +57,17 @@ const ProductScreen = () => {
       setProduct(res)
     }
     fetchProducts()
-  },[id])
+  },[])
+
+  const checkItemsInLocaleStorage = (product) => {
+    const exist = cartItems.find((x) => x._id === product._id)
+
+    !exist
+    ? setCartItems([...cartItems, {...product}])
+    : setCartItems(cartItems.map((x) => x._id === product._id 
+    ? {...exist, qtyInCart: exist.qtyInCart + 1} 
+    : x))
+  }
 
   return (
   <MainBox>
@@ -76,7 +86,9 @@ const ProductScreen = () => {
             <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
             <ListGroup.Item>
               <SelectedList />
-              <Button block onClick={()=> { setCartItems([...cartItems, {...product}]) 
+              
+              <Button block onClick={()=> { 
+                      checkItemsInLocaleStorage(product)
               }}>KÖP</Button>
             </ListGroup.Item>
             <ListGroup.Item> Beskrivning: {product.caption} </ListGroup.Item>
