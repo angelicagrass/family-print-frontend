@@ -22,6 +22,9 @@ const MainBx = styled.div`
 }
 `
 
+
+
+
 const MainBox = ({ children }) => {
     return (
         <MainBx>
