@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import Links from './Links.js'
+import Links from './Links/Links.js'
 import styled from 'styled-components'
 
 const GradientDiv = styled.div`

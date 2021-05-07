@@ -1,26 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Row, Col, NavDropdown } from 'react-bootstrap'
+import { Col, NavDropdown } from 'react-bootstrap'
 import fetch from 'node-fetch'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    white-space: nowrap;
-  &:focus, &:hover, &:visited, &:link, &:active {
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: grey;
-  }
-`
-
-const MyRow = styled(Row)`
-@media only screen and (max-width: ${props => props.theme.screen.medium}) {
-  all: unset;
-}
-`
+import { StyledLink, MyRow } from './StyledLinks.js'
 
 const Links = () => {
   const [categories, setCategories] = useState([])
