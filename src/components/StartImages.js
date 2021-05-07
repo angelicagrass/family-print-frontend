@@ -1,5 +1,5 @@
 import { Row, Col, Image, Container } from 'react-bootstrap'
-import Glass from './Glass.js'
+import Glass from './Glass/Glass.js'
 import React from 'react'
 import styled from 'styled-components'
 

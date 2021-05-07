@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-const GlassDiv = styled.div`
+export const GlassDiv = styled.div`
   position: relative;
   width: 400px;
   height: 200px;
@@ -29,13 +28,3 @@ const GlassDiv = styled.div`
   font-size:1px;
 }
 `
-
-const Glass = ({ children }) => {
-  return (
-    <GlassDiv>{children}</GlassDiv>
-  )
-}
-
-export default Glass
-
-

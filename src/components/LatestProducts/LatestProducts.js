@@ -1,16 +1,8 @@
-
 import React, { useState, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import Product from './Product.js'
+import Product from '../Product.js'
 import styled from 'styled-components'
-
-const StyledDiv = styled.div`
-  margin-top: 1vh;
-
-  @media only screen and (max-width: ${props => props.theme.screen.medium}) {
-    margin-top: 5vh;
-}
-`
+import { StyledDiv } from './StyledLatestProducts.js'
 
 const LatestProducts = () => {
   const [products, setProducts] = useState([])
