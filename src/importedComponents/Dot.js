@@ -25,7 +25,7 @@ text-align: center;
 text-transform: lowercase;
 align-items: center;
 color: white;
-font-wight: 800px;
+font-weight: 800px;
 
 ${props => props.arrowDirection === 'down' && {
   transform: "translate(210px, -10px) rotate(-90deg)",

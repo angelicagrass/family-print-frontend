@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup } from 'react-bootstrap'
-import Button from '../components/Button.js'
+import Button from '../components/Button/Button.js'
 import MainBox from '../components/Main.js'
 import styled from 'styled-components'
 import { StateContext } from '../globalstate/GlobalState.js'

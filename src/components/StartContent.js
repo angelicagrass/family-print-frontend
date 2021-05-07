@@ -1,7 +1,7 @@
 import { Row, Col, Container } from 'react-bootstrap'
 import React from 'react'
 import styled from 'styled-components'
-import CustomCard from './CustomCard.js'
+import CustomCard from './CustomCard/CustomCard.js'
 import text from '../theme/text.js'
 
 const MyDiv = styled.div`
