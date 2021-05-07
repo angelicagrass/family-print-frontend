@@ -1,7 +1,7 @@
 import React from 'react'
 import MainBox from '../components/Main.js'
 import { Link } from 'react-router-dom'
-import Button from '../components/Button.js'
+import Button from '../components/Button/Button.js'
 import styled from 'styled-components'
 
 const MyDiv = styled.div`
