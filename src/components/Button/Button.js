@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+
 import { StyledButton } from './StyledButton.js'
 
 const Button = ({ onClick, block, children }) => {
