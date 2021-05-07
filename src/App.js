@@ -1,7 +1,7 @@
 import React from 'react'
 import GlobalState from './globalstate/GlobalState.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Footer from './components/Footer.js'
+import Footer from './components/Footer/Footer.js'
 import Navigation from './components/Navbar.js'
 import HomeScreen from './screens/HomeScreen.js'
 import ProductScreen from './screens/ProductScreen.js'
