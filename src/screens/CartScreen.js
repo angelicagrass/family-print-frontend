@@ -4,7 +4,6 @@ import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
 import Button from '../components/Button.js'
-// import StyledCounter from '../importedComponents/ProductActions.js'
 import Dot from '../importedComponents/Dot.js'
 
 
@@ -81,12 +80,9 @@ const StyledNumber = styled.div`
 // Davids
 const StyledCounter = styled.div`
   position: relative;
-  /* justify-content: left;
-  align-items: left; */
   padding: 10px;
   width: 150px;
   margin: 0 auto;
-
 `
 
 const CartScreen = () => {
@@ -112,8 +108,6 @@ const CartScreen = () => {
     const newArray = [...cartItems]
     setCartItems(newArray.filter(item => item !== newArray[index]))
   }
-
-
 
   return (
     <MainBox>
