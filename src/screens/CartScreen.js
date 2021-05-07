@@ -3,7 +3,7 @@ import MainBox from '../components/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
-import Button from '../components/Button.js'
+import Button from '../components/Button/Button.js'
 import Dot from '../importedComponents/Dot.js'
 
 
