@@ -124,7 +124,7 @@ const CartScreen = () => {
       <div>
           <HeaderLine></HeaderLine>
           <MyImage src={ '/img/dinavaror.jpg'} /></div> 
-          {cartItems.length <=1 
+          {cartItems.length <=0 
       ? (<h2>Varukorgen är tom</h2>) 
       : (cartItems.map((item, index) => (
         <>
