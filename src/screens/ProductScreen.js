@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup } from 'react-bootstrap'
 import Button from '../components/Button/Button.js'
-import MainBox from '../components/Main.js'
+import MainBox from '../components/Main/Main.js'
 import styled from 'styled-components'
 import { StateContext } from '../globalstate/GlobalState.js'
-import SelectedList from '../components/SelectList.js'
+import SelectedList from '../components/SelectList/SelectList.js'
 
 
 const MyDiv = styled.div`
