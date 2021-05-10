@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import MainBox from '../components/Main.js'
+import MainBox from '../components/Main/Main.js'
 import { useParams } from 'react-router-dom'
-import Product from '../components/Product.js'
+import Product from '../components/Product/Product.js'
 import { Col, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 

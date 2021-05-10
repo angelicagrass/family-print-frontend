@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-const MainBx = styled.div`
+export const MainBx = styled.div`
   background-color: white;
   border-radius: 3px;
   min-height: 100vh;
@@ -21,16 +20,3 @@ const MainBx = styled.div`
   margin-top: 3vh;
 }
 `
-
-
-
-
-const MainBox = ({ children }) => {
-    return (
-        <MainBx>
-          {children}
-        </MainBx>
-    )
-}
-
-export default MainBox
