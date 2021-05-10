@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MainBox from '../components/Main.js'
+import MainBox from '../components/Main/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
