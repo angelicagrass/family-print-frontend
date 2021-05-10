@@ -1,7 +1,7 @@
 import React from 'react'
-import MainBox from '../components/Main.js'
-import StartImages from '../components/StartImages.js'
-import StartContent from '../components/StartContent.js'
+import MainBox from '../components/Main/Main.js'
+import StartImages from '../content/StartImages/StartImages.js'
+import StartContent from '../content/StartContent/StartContent.js'
 
 const HomeScreen = () => {
   return (
