@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { StyledDiv, IcondDiv, StyledSelect, CustomOptions } from './StyledSelectList.js'
 
 const SelectList = () => {
