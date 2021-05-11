@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MainBox from '../components/Main/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
 import { Col, Row, Container, Image } from 'react-bootstrap'
 import Button from '../components/Button/Button.js'
 import Dot from '../importedComponents/Dot.js'
+import DiscountBox from '../components/DiscountBox/DiscountBox.js'
 
 
 const MyContainer = styled(Container)`
@@ -87,6 +88,7 @@ const StyledCounter = styled.div`
 
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
+  const { animation, setAnimation } = React.useContext(StateContext)
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
 
   function decrementQty (index) {
@@ -142,10 +144,11 @@ const CartScreen = () => {
           </> )) )} {!cartItems.length <=1 && 
           <div>
             <PriceDiv>
-              <Button>ANGE VÄRDEKOD</Button>
+              <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
               <h3>Totalt: {totalPrice} SEK</h3></PriceDiv>
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
+            <DiscountBox />
   </MainBox> )
 }
 
