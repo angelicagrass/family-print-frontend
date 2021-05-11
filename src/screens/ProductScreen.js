@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup } from 'react-bootstrap'
 import Button from '../components/Button/Button.js'
 import MainBox from '../components/Main/Main.js'
@@ -57,7 +57,7 @@ const ProductScreen = () => {
       setProduct(res)
     }
     fetchProducts()
-  },[])
+  },[id])
 
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x._id === product._id)
