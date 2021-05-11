@@ -135,7 +135,7 @@ const hideDropdown = (e) => {
       btnType={btnType}>
       {mainCategory}
       {children}
-      {useDropdown && <Dropdown position={dropdownPlacement} mainCategory={mainCategory} toggleDisplay={renderDropdown}>{subCategories}</Dropdown>} 
+      {/* {useDropdown && <Dropdown position={dropdownPlacement} mainCategory={mainCategory} toggleDisplay={renderDropdown}>{subCategories}</Dropdown>}  */}
       </StyledButton>
   )
 }

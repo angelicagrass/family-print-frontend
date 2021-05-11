@@ -1,6 +1,5 @@
 import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
-import styled from 'styled-components'
 import { StyledBottom, SocialDiv, KlarnaDiv } from './StyledFooter.js'
 
 const Footer = () => {

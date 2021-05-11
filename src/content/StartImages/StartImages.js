@@ -1,4 +1,4 @@
-import { Row, Col, Image, Container } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import Glass from '../../components/Glass/Glass.js'
 import React from 'react'
 import { MyImage, MyText, MyLastText} from './StyledStartImages.js'
