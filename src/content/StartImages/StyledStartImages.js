@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Image } from 'react-bootstrap'
 
 export const MyText = styled.h1`
   color: white;
