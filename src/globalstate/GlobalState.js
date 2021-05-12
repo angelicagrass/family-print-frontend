@@ -10,12 +10,15 @@ export default function GlobalState({ children }) {
 
   const [cartItems, setCartItems] = useState(itemsInCartFromLocalStorage())
   const [animation, setAnimation] = useState(false)
+  const [ discount, setDiscount ] = useState('')
  
   const state = {
-    setCartItems: setCartItems,
     cartItems: cartItems,
+    setCartItems: setCartItems,
     animation: animation,
-    setAnimation: setAnimation
+    setAnimation: setAnimation,
+    discount: discount,
+    setDiscount: setDiscount
   }
 
   useEffect(() => {
@@ -23,8 +26,15 @@ export default function GlobalState({ children }) {
   }, [cartItems])
 
   useEffect(() => {
-    console.log('ANIMERA')
-  }, [animation])
+    const fetchDiscount = async () => {
+      console.log(discount)
+      let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getdiscount/${discount}`)
+      res = await res.json()
+   
+      console.log(res)
+    }
+    fetchDiscount()
+  },[discount])
 
   return (
     <StateContext.Provider value={state}>
