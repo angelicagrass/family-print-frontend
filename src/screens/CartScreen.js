@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MainBox from '../components/Main/Main.js'
 import { StateContext } from '../globalstate/GlobalState.js'
 import styled from 'styled-components'
@@ -89,7 +89,11 @@ const StyledCounter = styled.div`
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { animation, setAnimation } = React.useContext(StateContext)
+
+  
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
+
+  
 
   function decrementQty (index) {
     const newArray = [...cartItems]
