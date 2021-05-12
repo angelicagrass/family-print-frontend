@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StateContext } from '../../globalstate/GlobalState.js'
 import Button from '../Button/Button.js'
 import { Form } from 'react-bootstrap'
@@ -6,6 +6,17 @@ import { Wrapper, DiscountDiv } from './StyledDiscountBox.js'
 
 const DiscountBox = (props) => {
   const { animation, setAnimation } = React.useContext(StateContext)
+  const { discount, setDiscount } = React.useContext(StateContext)
+  const [formValue, setFormValue] = useState()
+
+  const handleChange = (e) => {
+    setFormValue(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    setDiscount(formValue)
+  }
+
 
   return (
   <Wrapper> {animation &&
@@ -14,11 +25,12 @@ const DiscountBox = (props) => {
         <Button onClick={()=> {setAnimation(false)}}>close</Button>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Ange din värdekdod</Form.Label>
-          <Form.Control type="value" placeholder="" />
+          <Form.Control type="value" onChange={handleChange} placeholder="" />
           <Form.Text className="text-muted"> Var noga med små och stora bokstäver. </Form.Text>
         </Form.Group>
       </Form>
-      <Button type='submit'>GE MIG RABATT</Button>
+      <Button onClick={() => {handleSubmit()}}>GE MIG RABATT</Button>
+      
     </DiscountDiv>} 
   </Wrapper>
   )
