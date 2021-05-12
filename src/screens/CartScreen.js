@@ -89,11 +89,10 @@ const StyledCounter = styled.div`
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { animation, setAnimation } = React.useContext(StateContext)
-
+  const { discountValue } = React.useContext(StateContext)
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
-
-  
+  const withDiscount = Math.round(totalPrice * discountValue)
 
   function decrementQty (index) {
     const newArray = [...cartItems]
@@ -149,7 +148,10 @@ const CartScreen = () => {
           <div>
             <PriceDiv>
               <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
-              <h3>Totalt: {totalPrice} SEK</h3></PriceDiv>
+              <h3>Totalt: {totalPrice} SEK</h3>
+              <h3>Totalt me rabatt: {withDiscount} SEK</h3>
+              
+              </PriceDiv>
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />
