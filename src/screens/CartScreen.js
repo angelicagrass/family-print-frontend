@@ -55,10 +55,26 @@ const PriceDiv = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
 
-  height: 150px;
+  height: 100px;
   width: 80%;
   margin: 30px auto; 
   padding-top: 20px;
+`
+
+const DiscountDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 100px;
+  width: 80%;
+  margin: 10px auto; 
+`
+const RedText = styled.h4`
+color: red;
+
+
+
 `
 // Davids
 const StyledNumber = styled.div`
@@ -89,11 +105,11 @@ const StyledCounter = styled.div`
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { animation, setAnimation } = React.useContext(StateContext)
-
+  const { discountValue } = React.useContext(StateContext)
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
-
-  
+  const withDiscount = Math.round(totalPrice * discountValue)
+  const theDiscountValue = totalPrice - withDiscount
 
   function decrementQty (index) {
     const newArray = [...cartItems]
@@ -149,7 +165,16 @@ const CartScreen = () => {
           <div>
             <PriceDiv>
               <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
-              <h3>Totalt: {totalPrice} SEK</h3></PriceDiv>
+              <h3>Totalt: {totalPrice} SEK</h3>
+              </PriceDiv>
+              <DiscountDiv>
+              {discountValue > 0.1 && 
+                <>
+                  <RedText>rabatt: {theDiscountValue} SEK </RedText>
+                  <h3>Att betala efter rabatt: {withDiscount} SEK</h3>
+                </>
+              }
+              </DiscountDiv>
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />

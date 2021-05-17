@@ -14,6 +14,39 @@ export const StyledButton = styled.button`
 
 &:hover {
   background: ${props => props.theme.colors.lightmain};
-
 }
+
+
+${props => props.buttonType === 'primary' && {
+  minWidth: "280px",
+  width: "fit-content",
+  marginTop: "10px",
+  marginLeft: "5px",
+  marginRight: "5px",
+  background: props.theme.colors.main,
+  color: props.theme.fontColors.main,
+  ":hover": {
+    background: props.theme.colors.mainHover,
+    color: props.theme.fontColors.mainHover,
+  }
+}}
+
+${props => props.buttonType === 'close' && {
+  
+  width: "fit-content",
+  marginTop: "-35px",
+  marginRight: "-10px",
+  background: "none",
+  color: "red",
+  float: "right",
+  padding: "0",
+  ":hover": {
+    background: "none",
+  }
+
+}}
+
+
+
+
 `
