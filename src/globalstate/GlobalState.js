@@ -11,7 +11,7 @@ export default function GlobalState({ children }) {
   const [cartItems, setCartItems] = useState(itemsInCartFromLocalStorage())
   const [animation, setAnimation] = useState(false)
   const [discount, setDiscount] = useState('')
-  const [discountValue, setDiscountValue] = useState(1)
+  const [discountValue, setDiscountValue] = useState(0)
  
   const state = {
     cartItems: cartItems,
@@ -24,13 +24,6 @@ export default function GlobalState({ children }) {
     setDiscountValue: setDiscountValue
   }
 
-
-
-
-
-
-
-
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }, [cartItems])
@@ -41,7 +34,7 @@ export default function GlobalState({ children }) {
       let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getdiscount/${discount}`)
       res = await res.json()
       const value = 1 - (res.value / 100)
-      value ? setDiscountValue(value) : setDiscountValue(1)  
+      value ? setDiscountValue(value) : setDiscountValue(0)  
     }
     fetchDiscount()
   },[discount])
