@@ -86,7 +86,6 @@ const ProductScreen = () => {
             <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
             <ListGroup.Item>
               <SelectedList />
-              
               <Button block onClick={()=> { 
                       checkItemsInLocaleStorage(product)
               }}>KÖP</Button>
