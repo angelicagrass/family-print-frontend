@@ -1,16 +1,20 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { MyCard } from './StyledProduct.js'
+import { Link } from 'react-router-dom'
+
+//test att lägga till
 
 const Product = ({ product }) => {
   return (
+
     <MyCard className='my-3 p-3 rounded'>
-      <a href={`/product/${product.id}`}>
-        <Card.Img src={product.imageurl} variant='top' /> </a>
+      <Link to={`/product/${product.id}`} >
+        <Card.Img src={product.imageurl} variant='top' /> </Link>
       <Card.Body>
-        <a href={`/product/${product.id}`}>
+        <Link to={`/product/${product.id}`}>
           <Card.Title as='div'><strong>{product.name}</strong></Card.Title>
-        </a>
+        </Link>
         <Card.Text as='p'>{product.price} sek </Card.Text>
       </Card.Body>
     </MyCard>
