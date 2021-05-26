@@ -26,9 +26,9 @@ const CategoryScreen = () => {
   return (
     <MainBox>
       <StyledDiv>
-        <h1 className="text-muted"></h1>
+        <h1 className="text-muted">TEST-RUBRIK</h1>
         <Row className="justify-content-md-center"> {products.map((product, index) => (
-          <Col key={ index} sm={12} md={6} lg={4} xl={3}>
+          <Col key={index} sm={12} md={6} lg={4} xl={3}>
             <Product key={index} product={product} /> </Col> ))} </Row>
       </StyledDiv>
     </MainBox>
