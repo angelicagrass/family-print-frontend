@@ -13,6 +13,7 @@ export default function GlobalState({ children }) {
   const [discount, setDiscount] = useState('')
   const [discountValue, setDiscountValue] = useState(0)
   const [sizePrice, setSizePrice] = useState(0)
+  const [counter, setCounter] = useState(0)
  
   const state = {
     cartItems: cartItems,
@@ -24,7 +25,9 @@ export default function GlobalState({ children }) {
     discountValue: discountValue,
     setDiscountValue: setDiscountValue,
     sizePrice: sizePrice,
-    setSizePrice: setSizePrice
+    setSizePrice: setSizePrice,
+    counter: counter,
+    setCounter: setCounter
   }
 
   useEffect(() => {
