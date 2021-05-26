@@ -49,6 +49,7 @@ const ProductScreen = () => {
   const [product, setProduct] = useState([])
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { sizePrice, setSizePrice } = React.useContext(StateContext)
+  const { counter, setCounter } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
 
   useEffect(() => {
@@ -62,13 +63,16 @@ const ProductScreen = () => {
 
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x._id === product._id)
-    
     !exist
     ? setCartItems([...cartItems, {...product}])
     : setCartItems(cartItems.map((x) => x._id === product._id 
     ? {...exist, qtyInCart: exist.qtyInCart + 1} 
     : x))
+    setCounter(counter + 1)
+    console.log(counter)
   }
+
+
 
 
 
