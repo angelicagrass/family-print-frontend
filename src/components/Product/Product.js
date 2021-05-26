@@ -3,8 +3,11 @@ import { Card } from 'react-bootstrap'
 import { MyCard } from './StyledProduct.js'
 import { Link } from 'react-router-dom'
 
+//test att lägga till
+
 const Product = ({ product }) => {
   return (
+
     <MyCard className='my-3 p-3 rounded'>
       <Link to={`/product/${product.id}`} >
         <Card.Img src={product.imageurl} variant='top' /> </Link>
