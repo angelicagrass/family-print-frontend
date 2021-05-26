@@ -48,6 +48,7 @@ const ProductScreen = () => {
   const { id } = useParams()
   const [product, setProduct] = useState([])
   const { cartItems, setCartItems } = React.useContext(StateContext)
+  const { sizePrice, setSizePrice } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
 
   useEffect(() => {
@@ -61,13 +62,18 @@ const ProductScreen = () => {
 
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x._id === product._id)
+    product.price = product.price + sizePrice
 
     !exist
     ? setCartItems([...cartItems, {...product}])
     : setCartItems(cartItems.map((x) => x._id === product._id 
     ? {...exist, qtyInCart: exist.qtyInCart + 1} 
     : x))
+
+    product.price = product.price - sizePrice
   }
+
+
 
   return (
   <MainBox>
@@ -83,9 +89,12 @@ const ProductScreen = () => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>{product.name}</h2> </ListGroup.Item>
-            <ListGroup.Item> Pris: {product.price} sek </ListGroup.Item>
+            <ListGroup.Item> Pris: {sizePrice 
+              ? sizePrice + product.price
+              : product.price} sek 
+            </ListGroup.Item>
             <ListGroup.Item>
-              <SelectedList />
+              <SelectedList>{product}</SelectedList>
               <Button block onClick={()=> { 
                       checkItemsInLocaleStorage(product)
               }}>KÖP</Button>

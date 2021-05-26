@@ -24,7 +24,6 @@ const DiscountBox = (props) => {
     <DiscountDiv>
       <Button buttonType='close' onClick={()=> {setAnimation(false)}}><i class="fas fa-times"></i></Button>
       <Form>
-        
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Ange din värdekdod</Form.Label>
           <Form.Control type="value" onChange={handleChange} placeholder="" />
