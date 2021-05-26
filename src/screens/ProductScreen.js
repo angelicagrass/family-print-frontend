@@ -62,15 +62,12 @@ const ProductScreen = () => {
 
   const checkItemsInLocaleStorage = (product) => {
     const exist = cartItems.find((x) => x._id === product._id)
-    product.price = product.price + sizePrice
-
+    
     !exist
     ? setCartItems([...cartItems, {...product}])
     : setCartItems(cartItems.map((x) => x._id === product._id 
     ? {...exist, qtyInCart: exist.qtyInCart + 1} 
     : x))
-
-    product.price = product.price - sizePrice
   }
 
 

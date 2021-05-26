@@ -22,7 +22,7 @@ const App = () => {
           <Switch>
             <Route path='/' component={HomeScreen} exact />
             <Route path='/kassa' component={CartScreen} />
-            <Route path='/product/:id/' component={ProductScreen} exact />
+            <Route path='/product/:id' component={ProductScreen} exact />
             <Route path='/kopvillkor' component={TermsScreen} />
             <Route path='/:category/:id/' component={CategoryScreen} />
           </Switch>
