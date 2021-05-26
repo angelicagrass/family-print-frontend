@@ -10,6 +10,7 @@ height: 30px;
 width: 30px;
 text-align: center;
 color: black;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 font-weight: 900;
 margin-right: 60px;
 margin-left: -90px;
