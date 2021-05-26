@@ -12,6 +12,7 @@ export default function GlobalState({ children }) {
   const [animation, setAnimation] = useState(false)
   const [discount, setDiscount] = useState('')
   const [discountValue, setDiscountValue] = useState(0)
+  const [sizePrice, setSizePrice] = useState(0)
  
   const state = {
     cartItems: cartItems,
@@ -21,8 +22,14 @@ export default function GlobalState({ children }) {
     discount: discount,
     setDiscount: setDiscount,
     discountValue: discountValue,
-    setDiscountValue: setDiscountValue
+    setDiscountValue: setDiscountValue,
+    sizePrice: sizePrice,
+    setSizePrice: setSizePrice
   }
+
+  useEffect(() => {
+    console.log(typeof sizePrice + "sizeprice")
+  }, [sizePrice])
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
