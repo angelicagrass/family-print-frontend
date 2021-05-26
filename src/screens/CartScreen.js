@@ -106,6 +106,7 @@ const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { animation, setAnimation } = React.useContext(StateContext)
   const { discountValue } = React.useContext(StateContext)
+  const { counter, setCounter } = React.useContext(StateContext)
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
   const withDiscount = Math.round(totalPrice * discountValue)
@@ -114,6 +115,7 @@ const CartScreen = () => {
   function decrementQty (index) {
     const newArray = [...cartItems]
     newArray[index].qtyInCart -= 1
+    setCounter(counter - 1)
 
     newArray[index].qtyInCart === 0 
       ? setCartItems(newArray.filter(item => item !== newArray[index]))
@@ -123,6 +125,7 @@ const CartScreen = () => {
   function increaseQty (index) {
     const newArray = [...cartItems]
     newArray[index].qtyInCart += 1
+    setCounter(counter + 1)
     setCartItems(newArray)
   }
 
