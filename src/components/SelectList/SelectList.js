@@ -1,14 +1,22 @@
 import React from 'react'
 import { StyledDiv, IcondDiv, StyledSelect, CustomOptions } from './StyledSelectList.js'
+import { StateContext } from '../../globalstate/GlobalState.js'
 
-const SelectList = () => {
+const SelectList = ({children}) => {
+  const { sizePrice, setSizePrice } = React.useContext(StateContext)
+
+  const handleChange = (e) => {
+    const number = Number(e.target.value)
+    setSizePrice(number)
+  }
+
   return (
     <StyledDiv>
-      <StyledSelect className="form-select" aria-label="Default select example">
+      <StyledSelect onChange={handleChange} className="form-select" aria-label="Default select example">
             <CustomOptions selected>STORLEK</CustomOptions>
-              <option value="1">A4</option>
-              <option value="2">30 x 40cm</option>
-              <option value="3">50 x 70cm</option>
+            {children.size && children.size.map((size, index) => { return (
+              <option key={index} value={index}>{size}</option>
+            )})}
       </StyledSelect>
       <IcondDiv><i className="fas fa-chevron-circle-down fa-lg"></i></IcondDiv>
     </StyledDiv>
