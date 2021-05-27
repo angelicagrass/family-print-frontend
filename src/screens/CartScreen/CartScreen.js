@@ -44,6 +44,7 @@ const CartScreen = () => {
     setCartItems(newArray.filter(item => item !== newArray[index]))
   }
 
+
   return (
     <MainBox>
     <div>
@@ -83,15 +84,15 @@ const CartScreen = () => {
               <h5>Totalt i varukorgen: {totalPrice} SEK</h5>
               </PriceDiv>
               {!cartItems.length <= 0 && 
-                <TotalDiv>  
+                <TotalDiv> 
                 <h3>Fraktkostnad {totalPrice > 499 
                 ? 0
                 : shipping
               } SEK</h3>
                 {discountValue
                 ? <><RedText>rabatt: {theDiscountValue} SEK </RedText>
-                  <h3>Att Betala: {withDiscount} SEK</h3></>
-                : <h3>Att betala: {totalPrice} SEK</h3>
+                  <h3>Att Betala: {withDiscount + shipping} SEK</h3></>
+                : <h3>Att betala: {totalPrice + shipping} SEK</h3>
                 }
                 </TotalDiv>
               }
