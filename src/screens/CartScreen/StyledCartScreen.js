@@ -96,6 +96,7 @@ export const StyledCounter = styled.div`
 
 export const TotalDiv = styled.div`
 background: ${props => props.theme.colors.superlight};
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 border-radius: 10px;
 height: 200px;
 width: 50%;
@@ -105,5 +106,10 @@ padding: 20px;
 padding-top: 40px;
 margin-bottom: 40px;
 font-weight: 900;
-color: ${props => props.theme.colors.dark}
+
+h3 {
+  color: ${props => props.theme.colors.darkgrey};
+}
+
+
 `
