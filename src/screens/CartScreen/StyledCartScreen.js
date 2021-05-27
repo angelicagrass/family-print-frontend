@@ -105,4 +105,5 @@ padding: 20px;
 padding-top: 40px;
 margin-bottom: 40px;
 font-weight: 900;
+color: ${props => props.theme.colors.dark}
 `

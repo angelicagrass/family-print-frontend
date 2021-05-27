@@ -72,7 +72,7 @@ const CartScreen = () => {
                 </StyledCounter>
               </Col>
               <Col md={2}>{item.price * item.qtyInCart} SEK</Col>
-              <Col md={2}><button onClick={() => {remove(index)}} class="fas fa-trash-alt"></button></Col>
+              <Col md={2}><i onClick={() => {remove(index)}} class="fas fa-trash-alt"></i></Col>
             </MyRow>
           </MyContainer>
           </> )) )} {!cartItems.length <=1 && 
