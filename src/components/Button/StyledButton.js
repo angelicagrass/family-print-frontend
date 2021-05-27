@@ -20,7 +20,6 @@ export const StyledButton = styled.button`
   background: black;
 }
 
-
 ${props => props.buttonType === 'primary' && {
   minWidth: "280px",
   width: "fit-content",
@@ -49,8 +48,4 @@ ${props => props.buttonType === 'close' && {
   }
 
 }}
-
-
-
-
 `
