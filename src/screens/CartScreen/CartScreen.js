@@ -1,106 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import MainBox from '../components/Main/Main.js'
-import { StateContext } from '../globalstate/GlobalState.js'
-import styled from 'styled-components'
-import { Col, Row, Container, Image } from 'react-bootstrap'
-import Button from '../components/Button/Button.js'
-import Dot from '../importedComponents/Dot.js'
-import DiscountBox from '../components/DiscountBox/DiscountBox.js'
+import React from 'react'
+import MainBox from '../../components/Main/Main.js'
+import { StateContext } from '../../globalstate/GlobalState.js'
+import { Col, Image } from 'react-bootstrap'
+import Button from '../../components/Button/Button.js'
+import Dot from '../../importedComponents/Dot.js'
+import DiscountBox from '../../components/DiscountBox/DiscountBox.js'
+import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, DiscountDiv, RedText, StyledNumber, StyledCounter } from './StyledCartScreen.js'
 
 
-const MyContainer = styled(Container)`
-  border-top: 2px solid lightgrey;
-  margin-top: 10px;
-  padding: 20px;
-  height: fit-content;
-`
-
-const MyRow = styled(Row)`
-  text-align: center;
-  vertical-align: middle;
-  line-height: 70px;
-`
-
-const OrderDiv = styled.div`
-  position: relative;
-  height: 50px;
-  background-color: #ebebeb;
-  width: 90%;
-  margin: 0 auto 30px auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  z-index: 100;
-`
-
-const MyText = styled.p`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-`
-
-const HeaderLine = styled.div`
-  height: 50px;
-  border-bottom: 3px #ebebeb solid;
-  margin-bottom: 50px;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-`
-
-const MyImage = styled.img`
-  margin-top: -125px;
-`
-const PriceDiv = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-
-  height: 100px;
-  width: 80%;
-  margin: 30px auto; 
-  padding-top: 20px;
-`
-
-const DiscountDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  height: 100px;
-  width: 80%;
-  margin: 10px auto; 
-`
-const RedText = styled.h4`
-color: red;
-
-
-
-`
-// Davids
-const StyledNumber = styled.div`
-  display: inline-flex;
-  position: relative;
-  z-index: 0;
-  margin-left: 8px;
-  width: 40px;
-  justify-content: center;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(90deg, rgba(180,180,180,0.60) 0%, rgba(172,172,172,0.53) 43%, rgba(167,165,165,0.57) 61%);
-  backdrop-filter: brightness(150%) saturate(150%) blur(5px);
-  background-clip: padding-box;
-  color: rgba(0, 0, 0, 0.7);
-  height: 40px;
-`
-// Davids
-const StyledCounter = styled.div`
-  position: relative;
-  padding: 10px;
-  width: 150px;
-  margin: 0 auto;
-`
 
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
