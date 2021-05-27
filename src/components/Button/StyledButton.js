@@ -35,7 +35,6 @@ ${props => props.buttonType === 'primary' && {
 }}
 
 ${props => props.buttonType === 'close' && {
-  
   width: "fit-content",
   marginTop: "-35px",
   marginRight: "-10px",
@@ -46,6 +45,5 @@ ${props => props.buttonType === 'close' && {
   ":hover": {
     background: "none",
   }
-
 }}
 `
