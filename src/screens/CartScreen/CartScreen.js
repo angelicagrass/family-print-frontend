@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import MainBox from '../../components/Main/Main.js'
 import { StateContext } from '../../globalstate/GlobalState.js'
 import { Col, Image } from 'react-bootstrap'
@@ -60,7 +61,9 @@ const CartScreen = () => {
               <Col md={2}>
                 <Image src={item.imageurl} width="70px"></Image>
               </Col>
-              <Col md={3}>{item.name}</Col>
+              <Col md={3}>
+               <Link to={`/product/${item.id}`}>{item.name} </Link>
+              </Col>
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
                 <StyledCounter>
                   <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
