@@ -38,6 +38,7 @@ const CartScreen = () => {
 
   function remove (index) {
     const newArray = [...cartItems]
+    setCounter(counter - newArray[index].qtyInCart)
     setCartItems(newArray.filter(item => item !== newArray[index]))
   }
 
