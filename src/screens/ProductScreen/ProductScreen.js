@@ -17,6 +17,7 @@ const ProductScreen = () => {
   const { counter, setCounter } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
   const history = useHistory()
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
