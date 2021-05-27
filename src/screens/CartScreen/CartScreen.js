@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import MainBox from '../../components/Main/Main.js'
 import { StateContext } from '../../globalstate/GlobalState.js'
-import { Col, Image } from 'react-bootstrap'
+import { Col, Image, Row } from 'react-bootstrap'
 import Button from '../../components/Button/Button.js'
 import Dot from '../../importedComponents/Dot.js'
 import DiscountBox from '../../components/DiscountBox/DiscountBox.js'
-import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, DiscountDiv, RedText, StyledNumber, StyledCounter } from './StyledCartScreen.js'
+import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, DiscountDiv, RedText, StyledNumber, StyledCounter, TotalDiv, TotalRow } from './StyledCartScreen.js'
 
 
 
@@ -81,14 +81,16 @@ const CartScreen = () => {
               <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
               <h3>Totalt: {totalPrice} SEK</h3>
               </PriceDiv>
-              <DiscountDiv>
-              {discountValue > 0.1 && 
-                <>
-                  <RedText>rabatt: {theDiscountValue} SEK </RedText>
-                  <h3>Att betala efter rabatt: {withDiscount} SEK</h3>
-                </>
+              {!cartItems.length <= 0 && 
+                <TotalDiv>  
+                <h3>Fraktkostnad 49 SEK</h3>
+                {discountValue
+                ? <><RedText>rabatt: {theDiscountValue} SEK </RedText>
+                  <h3>Att Betala: {withDiscount} SEK</h3></>
+                : <h3>Att betala: {totalPrice} SEK</h3>
+                }
+                </TotalDiv>
               }
-              </DiscountDiv>
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />
