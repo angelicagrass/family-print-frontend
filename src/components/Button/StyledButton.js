@@ -16,6 +16,10 @@ export const StyledButton = styled.button`
   background: ${props => props.theme.colors.lightmain};
 }
 
+&:active {
+  background: black;
+}
+
 
 ${props => props.buttonType === 'primary' && {
   minWidth: "280px",
