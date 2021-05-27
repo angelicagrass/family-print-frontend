@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MainBox from '../../components/Main/Main.js'
 import { StateContext } from '../../globalstate/GlobalState.js'
@@ -15,6 +15,7 @@ const CartScreen = () => {
   const { animation, setAnimation } = React.useContext(StateContext)
   const { discountValue } = React.useContext(StateContext)
   const { counter, setCounter } = React.useContext(StateContext)
+  const [shipping, setShipping] = useState(49)
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
   const withDiscount = Math.round(totalPrice * discountValue)
@@ -79,11 +80,14 @@ const CartScreen = () => {
           <div>
             <PriceDiv>
               <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
-              <h3>Totalt: {totalPrice} SEK</h3>
+              <h5>Totalt i varukorgen: {totalPrice} SEK</h5>
               </PriceDiv>
               {!cartItems.length <= 0 && 
                 <TotalDiv>  
-                <h3>Fraktkostnad 49 SEK</h3>
+                <h3>Fraktkostnad {totalPrice > 499 
+                ? 0
+                : shipping
+              } SEK</h3>
                 {discountValue
                 ? <><RedText>rabatt: {theDiscountValue} SEK </RedText>
                   <h3>Att Betala: {withDiscount} SEK</h3></>
@@ -91,8 +95,6 @@ const CartScreen = () => {
                 }
                 </TotalDiv>
               }
-
-              
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />
