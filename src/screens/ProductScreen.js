@@ -6,11 +6,20 @@ import MainBox from '../components/Main/Main.js'
 import styled from 'styled-components'
 import { StateContext } from '../globalstate/GlobalState.js'
 import SelectedList from '../components/SelectList/SelectList.js'
+import { Link, useHistory} from 'react-router-dom'
+
 
 
 const MyDiv = styled.div`
   float: left;
   margin-top: -4vh;
+  cursor: pointer;
+  color: ${props => props.theme.colors.main};
+  transition: all 0.4s;
+
+&:hover {
+  color: ${props => props.theme.colors.lightmain};
+}
 `
 
 const ThumbImagesDiv = styled.div`
@@ -51,6 +60,7 @@ const ProductScreen = () => {
   const { sizePrice, setSizePrice } = React.useContext(StateContext)
   const { counter, setCounter } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
+  const history = useHistory()
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -72,17 +82,20 @@ const ProductScreen = () => {
     console.log(counter)
   }
 
+  
+
 
 
 
 
   return (
+    
   <MainBox>
-    {/* <MyDiv>
-      <Link to='/'>
-        <Button>Gå tillbaka</Button>
-      </Link>
-    </MyDiv> */}
+    <MyDiv onClick={() => history.goBack()}>
+      
+      <i class="fas fa-angle-double-left fa-2x"></i>
+      
+    </MyDiv>
       <Row className='justify-content-center'>
         <Col md={5}>
           <Image src={product.thumbImageUrls && product.thumbImageUrls[arrayIndex]} alt={product.name} fluid /> </Col>
