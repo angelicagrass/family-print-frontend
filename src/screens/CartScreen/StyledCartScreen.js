@@ -93,3 +93,16 @@ export const StyledCounter = styled.div`
   width: 150px;
   margin: 0 auto;
 `
+
+export const TotalDiv = styled.div`
+background: ${props => props.theme.colors.superlight};
+border-radius: 10px;
+height: 200px;
+width: 50%;
+margin-left: 50%;
+text-align: right;
+padding: 20px;
+padding-top: 40px;
+margin-bottom: 40px;
+font-weight: 900;
+`
