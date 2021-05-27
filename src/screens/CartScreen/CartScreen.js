@@ -91,6 +91,8 @@ const CartScreen = () => {
                 }
                 </TotalDiv>
               }
+
+              
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />
