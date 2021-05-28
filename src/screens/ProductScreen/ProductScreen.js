@@ -37,6 +37,7 @@ const ProductScreen = () => {
     : x))
     setCounter(counter + 1)
     console.log(counter)
+    //test
   }
 
   return (
