@@ -7,10 +7,12 @@ import { StyledDiv } from './StyledCategoryScreens.js'
 import Loader from '../../components/Loader/Loader.js'
 
 
+
 const CategoryScreen = () => {
   const { id } = useParams()
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -18,6 +20,7 @@ const CategoryScreen = () => {
       res = await res.json()
       setProducts(res)
       setLoading(false)
+
     }
     fetchProducts()
   },[id])
@@ -32,6 +35,7 @@ const CategoryScreen = () => {
           <Product key={index} product={product} /> </Col> ))} </Row>
         </StyledDiv>
       }
+
     </MainBox>
   )
 }

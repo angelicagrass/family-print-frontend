@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MainBox from '../../components/Main/Main.js'
@@ -10,12 +11,14 @@ import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, Di
 
 
 
+
 const CartScreen = () => {
   const { cartItems, setCartItems } = React.useContext(StateContext)
   const { animation, setAnimation } = React.useContext(StateContext)
   const { discountValue } = React.useContext(StateContext)
   const { counter, setCounter } = React.useContext(StateContext)
   const [shipping, setShipping] = useState(49)
+
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
   const withDiscount = Math.round(totalPrice * discountValue)
@@ -45,6 +48,7 @@ const CartScreen = () => {
   }
 
 
+
   return (
     <MainBox>
     <div>
@@ -66,6 +70,7 @@ const CartScreen = () => {
               <Col md={3}>
                <Link to={`/product/${item.id}`}>{item.name} </Link>
               </Col>
+
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
                 <StyledCounter>
                   <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
@@ -75,6 +80,7 @@ const CartScreen = () => {
               </Col>
               <Col md={2}>{item.price * item.qtyInCart} SEK</Col>
               <Col md={2}><i onClick={() => {remove(index)}} class="fas fa-trash-alt"></i></Col>
+
             </MyRow>
           </MyContainer>
           </> )) )} {!cartItems.length <=1 && 
@@ -96,6 +102,7 @@ const CartScreen = () => {
                 }
                 </TotalDiv>
               }
+
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />

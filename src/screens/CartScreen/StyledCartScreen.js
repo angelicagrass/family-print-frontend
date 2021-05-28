@@ -92,6 +92,7 @@ export const StyledCounter = styled.div`
   padding: 10px;
   width: 150px;
   margin: 0 auto;
+
 `
 
 export const TotalDiv = styled.div`
@@ -113,3 +114,4 @@ h3 {
 
 
 `
+
