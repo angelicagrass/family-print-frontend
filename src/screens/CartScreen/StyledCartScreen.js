@@ -17,7 +17,7 @@ export const MyRow = styled(Row)`
 export const OrderDiv = styled.div`
   position: relative;
   height: 50px;
-  background-color: #ebebeb;
+  background-color: ${props => props.theme.colors.superlight};
   width: 90%;
   margin: 0 auto 30px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -101,7 +101,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 border-radius: 10px;
 height: 200px;
 width: 50%;
-margin-left: 50%;
+margin-left: 45%;
 text-align: right;
 padding: 20px;
 padding-top: 40px;
