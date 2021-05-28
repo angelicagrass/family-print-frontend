@@ -11,7 +11,6 @@ import MyParallax from './components/Parallax/Parallax.js'
 import CartScreen from './screens/CartScreen/CartScreen.js'
 
 
-
 const App = () => {
 
   return (

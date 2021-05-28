@@ -16,6 +16,10 @@ export const StyledButton = styled.button`
   background: ${props => props.theme.colors.lightmain};
 }
 
+&:active {
+  background: black;
+}
+
 
 ${props => props.buttonType === 'primary' && {
   minWidth: "280px",
@@ -32,7 +36,7 @@ ${props => props.buttonType === 'primary' && {
 }}
 
 ${props => props.buttonType === 'close' && {
-  
+
   width: "fit-content",
   marginTop: "-35px",
   marginRight: "-10px",
@@ -43,10 +47,6 @@ ${props => props.buttonType === 'close' && {
   ":hover": {
     background: "none",
   }
-
 }}
-
-
-
 
 `

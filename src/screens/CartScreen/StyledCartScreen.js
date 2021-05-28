@@ -92,4 +92,26 @@ export const StyledCounter = styled.div`
   padding: 10px;
   width: 150px;
   margin: 0 auto;
+
 `
+
+export const TotalDiv = styled.div`
+background: ${props => props.theme.colors.superlight};
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+border-radius: 10px;
+height: 200px;
+width: 50%;
+margin-left: 50%;
+text-align: right;
+padding: 20px;
+padding-top: 40px;
+margin-bottom: 40px;
+font-weight: 900;
+
+h3 {
+  color: ${props => props.theme.colors.darkgrey};
+}
+
+
+`
+

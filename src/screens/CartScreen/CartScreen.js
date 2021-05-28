@@ -1,11 +1,14 @@
-import React from 'react'
+
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import MainBox from '../../components/Main/Main.js'
 import { StateContext } from '../../globalstate/GlobalState.js'
-import { Col, Image } from 'react-bootstrap'
+import { Col, Image, Row } from 'react-bootstrap'
 import Button from '../../components/Button/Button.js'
 import Dot from '../../importedComponents/Dot.js'
 import DiscountBox from '../../components/DiscountBox/DiscountBox.js'
-import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, DiscountDiv, RedText, StyledNumber, StyledCounter } from './StyledCartScreen.js'
+import { MyContainer, MyRow, OrderDiv, MyText, HeaderLine, MyImage, PriceDiv, DiscountDiv, RedText, StyledNumber, StyledCounter, TotalDiv, TotalRow } from './StyledCartScreen.js'
+
 
 
 
@@ -14,6 +17,8 @@ const CartScreen = () => {
   const { animation, setAnimation } = React.useContext(StateContext)
   const { discountValue } = React.useContext(StateContext)
   const { counter, setCounter } = React.useContext(StateContext)
+  const [shipping, setShipping] = useState(49)
+
   
   const totalPrice = [...cartItems].reduce((total, obj) => obj.price * obj.qtyInCart + total,0)
   const withDiscount = Math.round(totalPrice * discountValue)
@@ -38,8 +43,11 @@ const CartScreen = () => {
 
   function remove (index) {
     const newArray = [...cartItems]
+    setCounter(counter - newArray[index].qtyInCart)
     setCartItems(newArray.filter(item => item !== newArray[index]))
   }
+
+
 
   return (
     <MainBox>
@@ -59,7 +67,10 @@ const CartScreen = () => {
               <Col md={2}>
                 <Image src={item.imageurl} width="70px"></Image>
               </Col>
-              <Col md={3}>{item.name}</Col>
+              <Col md={3}>
+               <Link to={`/product/${item.id}`}>{item.name} </Link>
+              </Col>
+
               <Col md={3} style={{margin: '0 auto 30px auto'}}>
                 <StyledCounter>
                   <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
@@ -68,23 +79,30 @@ const CartScreen = () => {
                 </StyledCounter>
               </Col>
               <Col md={2}>{item.price * item.qtyInCart} SEK</Col>
-              <Col md={2}><button onClick={() => {remove(index)}} class="fas fa-trash-alt"></button></Col>
+              <Col md={2}><i onClick={() => {remove(index)}} class="fas fa-trash-alt"></i></Col>
+
             </MyRow>
           </MyContainer>
           </> )) )} {!cartItems.length <=1 && 
           <div>
             <PriceDiv>
               <Button onClick={() => {setAnimation(true)}}>ANGE VÄRDEKOD</Button>
-              <h3>Totalt: {totalPrice} SEK</h3>
+              <h5>Totalt i varukorgen: {totalPrice} SEK</h5>
               </PriceDiv>
-              <DiscountDiv>
-              {discountValue > 0.1 && 
-                <>
-                  <RedText>rabatt: {theDiscountValue} SEK </RedText>
-                  <h3>Att betala efter rabatt: {withDiscount} SEK</h3>
-                </>
+              {!cartItems.length <= 0 && 
+                <TotalDiv> 
+                <h3>Fraktkostnad {totalPrice > 499 
+                ? 0
+                : shipping
+              } SEK</h3>
+                {discountValue
+                ? <><RedText>rabatt: {theDiscountValue} SEK </RedText>
+                  <h3>Att Betala: {withDiscount + shipping} SEK</h3></>
+                : <h3>Att betala: {totalPrice + shipping} SEK</h3>
+                }
+                </TotalDiv>
               }
-              </DiscountDiv>
+
             <HeaderLine></HeaderLine>
             <MyImage src={ '/img/slutforkop.jpg'} /> </div> } </div>
             <DiscountBox />

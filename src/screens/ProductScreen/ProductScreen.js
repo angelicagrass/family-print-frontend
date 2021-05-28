@@ -18,6 +18,7 @@ const ProductScreen = () => {
   const [arrayIndex, setArrayIndex] = useState(0)
   const history = useHistory()
 
+
   useEffect(() => {
     const fetchProducts = async () => {
       let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/getproduct/${id}`)
