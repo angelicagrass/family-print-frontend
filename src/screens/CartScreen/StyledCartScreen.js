@@ -12,6 +12,11 @@ export const MyRow = styled(Row)`
   text-align: center;
   vertical-align: middle;
   line-height: 70px;
+
+  @media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  line-height: 50px;
+  
+}
 `
 
 export const OrderDiv = styled.div`
@@ -22,6 +27,10 @@ export const OrderDiv = styled.div`
   margin: 0 auto 30px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   z-index: 100;
+
+  @media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  height: 100px;
+}
 `
 
 export const MyText = styled.p`
@@ -47,18 +56,23 @@ export const PriceDiv = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-
   height: 100px;
   width: 80%;
   margin: 30px auto; 
   padding-top: 20px;
+
+  @media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  flex-direction: column;
+  height: 130px;
+  
+  align-items: center;
+}
 `
 
 export const DiscountDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   height: 100px;
   width: 80%;
   margin: 10px auto; 
@@ -96,20 +110,30 @@ export const StyledCounter = styled.div`
 `
 
 export const TotalDiv = styled.div`
-background: ${props => props.theme.colors.superlight};
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-border-radius: 10px;
-height: 200px;
-width: 50%;
-margin-left: 45%;
-text-align: right;
-padding: 20px;
-padding-top: 40px;
-margin-bottom: 40px;
-font-weight: 900;
+  background: ${props => props.theme.colors.superlight};
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 10px;
+  height: 200px;
+  width: 50%;
+  margin-left: 45%;
+  text-align: right;
+  padding: 20px;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 900;
 
 h3 {
   color: ${props => props.theme.colors.darkgrey};
+}
+
+@media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  width: 300px;
+  margin: auto;
+  padding-top: 60px;
+  
+  h3 {
+    font-size: 15px;
+  }
 }
 
 
