@@ -71,7 +71,7 @@ const CartScreen = () => {
                <Link to={`/product/${item.id}`}>{item.name} </Link>
               </Col>
 
-              <Col md={3} style={{margin: '0 auto 30px auto'}}>
+              <Col md={3} >
                 <StyledCounter>
                   <Dot onClick={()=> decrementQty(index) } btnType={'counterBtn'}>-</Dot>
                   <StyledNumber>{item.qtyInCart}</StyledNumber>
