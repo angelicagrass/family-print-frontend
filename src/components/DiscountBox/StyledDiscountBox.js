@@ -29,6 +29,10 @@ animation: drop 1s ease forwards;
   background-color: rgba(255,255,255,0.1);
 }
 
+@media only screen and (max-width: ${props => props.theme.screen.medium}) {
+  width: 300px;
+}
+
 @keyframes drop {
 0%{}
 70%{transform: translateY(900px)}
