@@ -13,7 +13,6 @@ const Footer = () => {
             <h5 className="title">Family Print</h5>
             <p><Link to="/kopvillkor">Köpvillkor &amp; Info</Link></p>
             <SocialDiv> <a href="https://www.facebook.com"><i className="fab fa-facebook fa-2x darkcolor"></i></a> <i className="fab fa-instagram-square fa-2x darkcolor"></i> <i className="fas fa-envelope fa-2x darkcolor"></i> </SocialDiv>
-
           </MDBCol>
           <MDBCol md="6"></MDBCol>
         </MDBRow>
