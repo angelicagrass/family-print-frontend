@@ -15,7 +15,6 @@ export const MyRow = styled(Row)`
 
   @media only screen and (max-width: ${props => props.theme.screen.medium}) {
   line-height: 50px;
-  
 }
 `
 
