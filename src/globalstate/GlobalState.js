@@ -34,6 +34,8 @@ export default function GlobalState({ children }) {
     console.log(typeof sizePrice + "sizeprice")
   }, [sizePrice])
 
+
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }, [cartItems])
@@ -48,6 +50,12 @@ export default function GlobalState({ children }) {
     }
     fetchDiscount()
   },[discount])
+
+  useEffect(() => {
+    cartItems.map((item) => (
+      setCounter(counter => counter + item.qtyInCart)
+    ))  
+  }, [])
 
   return (
     <StateContext.Provider value={state}>
