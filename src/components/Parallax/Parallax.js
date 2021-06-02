@@ -7,13 +7,13 @@ import CartCounter from '../CartCounter/CartCounter.js'
 const MyParallax = ({ children }) => {
     return (
     <>
+    <MyLink to='/'>
         <MyWrapper>
             <Parallax blur={{ min: -15, max: 50 }} strength={600}>
                 <Background className="custom-bg"> <img src="/img/paratest2.png" alt="fill murray" /> </Background>
                 <CartCounter></CartCounter>
                 <MyDiv>
                     <MyLink to='/kassa'> 
-                    
                     <i className="fas fa-shopping-bag fa-3x"></i> 
                     </MyLink>
                 </MyDiv>
@@ -27,6 +27,7 @@ const MyParallax = ({ children }) => {
                 </MySmallDiv>
             </Parallax>
         </MySmallWrapper>
+    </MyLink>
     </>
     )
 }
