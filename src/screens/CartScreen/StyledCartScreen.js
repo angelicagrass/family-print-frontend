@@ -80,7 +80,7 @@ export const RedText = styled.h4`
 color: red;
 `
 
-// Davids
+// Component by David Heinebäck
 export const StyledNumber = styled.div`
   display: inline-flex;
   position: relative;
@@ -99,7 +99,7 @@ export const StyledNumber = styled.div`
   height: 40px;
 `
 
-// Davids
+// Component by David Heinebäck
 export const StyledCounter = styled.div`
   position: relative;
   padding: 10px;
@@ -134,7 +134,18 @@ h3 {
     font-size: 15px;
   }
 }
-
-
 `
+export const KlarnaDiv = styled.div`
+  background-image: url('https://i.postimg.cc/FH24chpT/klarnamockup.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 70vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
+  @media only screen and (max-width: ${props => props.theme.screen.mobile}) {
+    background-size: 100% 100%;
+
+}
+`
