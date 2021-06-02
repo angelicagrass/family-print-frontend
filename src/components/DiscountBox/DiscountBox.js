@@ -5,8 +5,7 @@ import { Form } from 'react-bootstrap'
 import { Wrapper, DiscountDiv } from './StyledDiscountBox.js'
 
 const DiscountBox = (props) => {
-  const { animation, setAnimation } = React.useContext(StateContext)
-  const { discount, setDiscount } = React.useContext(StateContext)
+  const { animation, setAnimation, setDiscount } = React.useContext(StateContext)
   const [formValue, setFormValue] = useState()
 
   const handleChange = (e) => {
@@ -17,7 +16,6 @@ const DiscountBox = (props) => {
     setDiscount(formValue)
     setAnimation(false)
   }
-
 
   return (
   <Wrapper> {animation &&
@@ -31,7 +29,6 @@ const DiscountBox = (props) => {
         </Form.Group>
       </Form>
       <Button onClick={() => {handleSubmit()}}>GE MIG RABATT</Button>
-      
     </DiscountDiv>} 
   </Wrapper>
   )
