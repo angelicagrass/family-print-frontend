@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// Davids
+// Component by David Heinebäck
 
 const StyledDot = styled.div`
 
