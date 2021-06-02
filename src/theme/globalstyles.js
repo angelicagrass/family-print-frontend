@@ -34,7 +34,6 @@ footer {
   text-decoration: none;
 }
 
-
 .dropdown-toggle::before {
   content: "";
   position: absolute;
