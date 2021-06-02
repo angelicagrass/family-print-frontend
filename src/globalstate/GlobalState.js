@@ -34,8 +34,6 @@ export default function GlobalState({ children }) {
     console.log(typeof sizePrice + "sizeprice")
   }, [sizePrice])
 
-
-
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }, [cartItems])
