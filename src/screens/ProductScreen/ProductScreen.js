@@ -12,9 +12,7 @@ import { MyDiv, ThumbImagesDiv, MyImage, InfoDiv} from './StyledProductScreen.js
 const ProductScreen = () => {
   const { id } = useParams()
   const [product, setProduct] = useState([])
-  const { cartItems, setCartItems } = React.useContext(StateContext)
-  const { sizePrice } = React.useContext(StateContext)
-  const { counter, setCounter } = React.useContext(StateContext)
+  const { cartItems, setCartItems, sizePrice, counter, setCounter } = React.useContext(StateContext)
   const [arrayIndex, setArrayIndex] = useState(0)
   const history = useHistory()
 
@@ -36,12 +34,9 @@ const ProductScreen = () => {
     ? {...exist, qtyInCart: exist.qtyInCart + 1} 
     : x))
     setCounter(counter + 1)
-    console.log(counter)
-    //test
   }
 
   return (
-    
   <MainBox>
     <MyDiv onClick={() => history.goBack()}>
       <i class="fas fa-angle-double-left fa-2x"></i>
