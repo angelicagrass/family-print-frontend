@@ -23,5 +23,4 @@ export const MyTextBox = styled.div`
   @media only screen and (max-width: ${props => props.theme.screen.medium}) {
   padding-top: 1vh;
 }
-
 `
