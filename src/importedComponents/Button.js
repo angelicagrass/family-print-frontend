@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-// Davids
-
+// Component by David Heinebäck 
 
 export const StyledButton = styled.button`
 appearance: none;
